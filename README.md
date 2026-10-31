@@ -32,11 +32,10 @@ Figures currently waiting on images:
 
 | Filename | Section |
 |---|---|
-| `hd-ecg-pipeline.png` | Repolarization markers for SCD risk |
 | `ecg-annotation.png` | Automated delineation |
 | `dry-electrode.png` | Dry nanomaterial electrodes |
 
-Ten figures are already in place, recovered from the previous WordPress site, resized to
+Eleven figures are already in place, recovered from the previous WordPress site, resized to
 1600 px and flattened onto white (several were transparent PNGs whose black text would
 otherwise vanish on a dark background).
 

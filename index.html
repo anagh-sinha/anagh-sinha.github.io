@@ -161,9 +161,9 @@ img{max-width:100%}
         <p class="venue">PulsHeart Medical, under the Institute of Heart Research and Cardiac Modeling (IHU Liryc)</p>
         <p class="para">Sudden cardiac death risk is difficult to assess from the body surface because the repolarization features that carry the prognostic signal sit close to the noise floor of high-density ECG. Separating the two is the substance of the problem, not a preprocessing step before it.</p>
         <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score — and Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
-        <figure class="pending">
-          <div class="slot"><span>Figure slot — hd-ecg-pipeline.png<br>pipeline schematic or repolarization metric plot</span></div>
-          <figcaption>Figure 1. Repolarization metric extraction across the high-density lead set.</figcaption>
+        <figure>
+          <img src="images/hd-ecg-repolarization.jpg" alt="Overlaid ECG beats in two colours, red and blue. Thin lines show individual beats and thick lines the ensemble average of each group. The two groups track each other through the P wave and QRS complex but diverge sharply through the T wave, where one is positive and the other inverted. Two vertical markers cross the late T wave.">
+          <figcaption>Figure 1. Ensemble-averaged beats from two groups, overlaid. The complexes agree closely through depolarization and separate through repolarization — the T-wave interval is where the prognostic signal sits, and where the measurement markers are placed.</figcaption>
         </figure>
         <p class="meta">Python · NumPy · SciPy · pandas · Matplotlib · Docker · AWS EC2 and S3 · pytest</p>
       </div>
@@ -193,7 +193,7 @@ img{max-width:100%}
         <p class="para">Working on <em>Saccharomyces cerevisiae</em> in a 32 mm microfluidic chip, I processed terabytes of VIFFI imaging data through Python pipelines, extracted shape, size and fluorescence-intensity features with OpenCV and scikit-image, and benchmarked feature gating against Random Forest, XGBoost, PyTorch convolutional networks and autoencoder-based unsupervised models, comparing F1 scores and confusion matrices across them. The approach reached an F1 of 0.81 at 2,000 sorting events per second and a flow rate of 1 m/s.</p>
         <figure>
           <img src="images/iacs.jpg" alt="Labelled schematic of the image-activated cell sorting system: hydrodynamic focuser, acoustic focuser, optical microscope, image processor and cell sorter arranged along a microfluidic chip.">
-          <figcaption>Figure 1. The image-activated cell sorting system in the Goda Laboratory. Cells are focused hydrodynamically and acoustically, imaged in flow, classified by the image processor, and diverted by the sorter.</figcaption>
+          <figcaption>Figure 2. The image-activated cell sorting system in the Goda Laboratory. Cells are focused hydrodynamically and acoustically, imaged in flow, classified by the image processor, and diverted by the sorter.</figcaption>
         </figure>
         <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image — <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
       </div>
@@ -208,7 +208,7 @@ img{max-width:100%}
         <p class="para">I proposed a continuous light-stitching approach: a serial array of rotating scanners paired with charge-coupled device time delay and integration, acquiring the required grating orientations along the flow path rather than by arresting the cell. The proposal was received as technically feasible, and offers a path to adding super-resolution and three-dimensional modalities to an existing platform rather than replacing it.</p>
         <figure>
           <img src="images/super-resolution.jpg" alt="High-resolution fluorescence micrograph of a single cell, its nucleus and radiating cytoskeletal structure rendered in distinct colour channels.">
-          <figcaption>Figure 2. Spatial detail of the kind sub-diffraction imaging preserves and intensity-based sorting discards.</figcaption>
+          <figcaption>Figure 3. Spatial detail of the kind sub-diffraction imaging preserves and intensity-based sorting discards.</figcaption>
         </figure>
         <p class="meta">Structured illumination microscopy · CCD time delay and integration · optofluidic system design</p>
       </div>
@@ -239,19 +239,19 @@ img{max-width:100%}
         <p class="para">Approximately 2,000 surface-displayed HaloTag peptides per bacterium stood against only around 200 functionalized nanoparticles. That discrepancy located the failure mode in steric hindrance from the bulky nanoparticles rather than in insufficient tag expression, and indicated a longer PEG cross-linker as the correction. Alongside the thesis I automated the microscopy image analysis in ImageJ macros and Python, replacing manual binding counts, and trained a regression model on in-vitro assay data to predict cargo attachment efficiency and guide subsequent experiments. Protocols were written in full for replication.</p>
         <figure>
           <img src="images/halotag-display.jpg" alt="Functionalization strategy using HaloTag protein surface display: a recombinant plasmid carrying the HaloTag gene, expression on the bacterial membrane, covalent capture of cargo, and the chloroalkane ligand structure.">
-          <figcaption>Figure 3. Functionalization strategy. A recombinant plasmid places HaloTag on the bacterial surface, where it forms a covalent bond with cargo carried on a chloroalkane ligand.</figcaption>
+          <figcaption>Figure 4. Functionalization strategy. A recombinant plasmid places HaloTag on the bacterial surface, where it forms a covalent bond with cargo carried on a chloroalkane ligand.</figcaption>
         </figure>
         <figure>
           <img src="images/gram-negative-microrobots.jpg" alt="Genetic engineering strategy for Gram-negative bacteria: the pWX-118 plasmid carrying Lpp, HaloTag and OmpA, with a membrane diagram showing HaloTag displayed on the outer membrane binding a ligand-conjugated nanoparticle.">
-          <figcaption>Figure 4. The pWX-118 construct displays HaloTag on the <em>E. coli</em> outer membrane through an Lpp&ndash;OmpA anchor, where it captures a ligand-conjugated nanoparticle.</figcaption>
+          <figcaption>Figure 5. The pWX-118 construct displays HaloTag on the <em>E. coli</em> outer membrane through an Lpp&ndash;OmpA anchor, where it captures a ligand-conjugated nanoparticle.</figcaption>
         </figure>
         <figure>
           <img src="images/halotag-number-display.jpg" alt="Confocal bright-field, HaloTag and merged channels for HaloTag-expressing bacteria against a negative control, beside a bar chart of Cy5 molecule count per bacterium showing about 2,000 for the engineered strain and near zero for the control.">
-          <figcaption>Figure 5. Validation by confocal imaging and fluorescence spectrometry. Labelling with the fluorescent ligand gives roughly 2,000 Cy5 molecules per bacterium against a near-zero negative control.</figcaption>
+          <figcaption>Figure 6. Validation by confocal imaging and fluorescence spectrometry. Labelling with the fluorescent ligand gives roughly 2,000 Cy5 molecules per bacterium against a near-zero negative control.</figcaption>
         </figure>
         <figure>
           <img src="images/magnetic-quantification.jpg" alt="Transmission electron micrographs of a HaloTag-expressing bacterium densely studded with nanoparticles and of an unlabelled negative control, beside a bar chart of nanoparticle count per cell.">
-          <figcaption>Figure 6. Transmission electron microscopy of magnetic nanoparticle attachment. Counts centre near 150 per cell against a negative control at essentially zero &mdash; far below the number of tags available.</figcaption>
+          <figcaption>Figure 7. Transmission electron microscopy of magnetic nanoparticle attachment. Counts centre near 150 per cell against a negative control at essentially zero &mdash; far below the number of tags available.</figcaption>
         </figure>
         <p class="meta">Benchling · PCR and restriction cloning · Gibson Assembly · electroporation · confocal microscopy · TEM · ImageJ · Python · scikit-image · scikit-learn · Origin</p>
       </div>
@@ -266,7 +266,7 @@ img{max-width:100%}
         <p class="para">I designed a construct combining HaloTag, a signal peptide, a PEG cross-linker and a sortase binding motif, built on sortase-mediated cell surface display. Using multiple sequence alignment together with protein structure databases including DeepFold, I identified hydrophobic chains that are functionally essential but not conserved between the sortase binding motif and native surface-displayed proteins — the regions where a fusion can be introduced without disrupting what the native display machinery depends upon.</p>
         <figure>
           <img src="images/sortase-strategy.jpg" alt="Schematic of sortase-mediated anchoring in Gram-positive bacteria: a HaloTag, linker and LPXTG sorting signal construct processed by sortase and integrated into the peptidoglycan cell wall.">
-          <figcaption>Figure 7. Sortase-mediated display in <em>B. subtilis</em>. An LPXTG sorting signal lets sortase anchor the HaloTag construct covalently into the peptidoglycan wall.</figcaption>
+          <figcaption>Figure 8. Sortase-mediated display in <em>B. subtilis</em>. An LPXTG sorting signal lets sortase anchor the HaloTag construct covalently into the peptidoglycan wall.</figcaption>
         </figure>
         <p class="meta">Multiple sequence alignment · DeepFold · sortase display · construct design</p>
       </div>
@@ -283,15 +283,15 @@ img{max-width:100%}
         <p class="para">The device gave statistically significant differentiation between normal human primary fibroblasts and chemically induced cancer-associated fibroblasts across growth-factor concentrations, measured by electrochemical impedance spectroscopy and current–voltage hysteresis. I applied k-means and hierarchical clustering to the impedance and I–V data to classify sensor responses, and wrote the Python tooling that standardized electrochemical data analysis across the laboratory.</p>
         <figure>
           <img src="images/caf-biosensor.jpg" alt="Diagram of fibroblast activation and the tumour microenvironment, showing extracellular matrix components and a biosensor chip reading a matrix sample.">
-          <figcaption>Figure 8. Cancer-associated fibroblasts remodel the extracellular matrix. That change in composition is what the sensor is built to read electrically.</figcaption>
+          <figcaption>Figure 9. Cancer-associated fibroblasts remodel the extracellular matrix. That change in composition is what the sensor is built to read electrically.</figcaption>
         </figure>
         <figure>
           <img src="images/mim-sensor.jpg" alt="Sensor fabrication strategy: a titanium substrate anodized to TiO2 nanotubes, cells deposited as analyte, and an expanded view of the metal-insulator-metal stack connected to electrochemical instruments.">
-          <figcaption>Figure 9. Fabrication route. Titanium is anodized to a TiO&#8322; nanotube layer, cells are deposited as the analyte, and the metal&ndash;insulator&ndash;metal stack is read electrochemically.</figcaption>
+          <figcaption>Figure 10. Fabrication route. Titanium is anodized to a TiO&#8322; nanotube layer, cells are deposited as the analyte, and the metal&ndash;insulator&ndash;metal stack is read electrochemically.</figcaption>
         </figure>
         <figure>
           <img src="images/tio2-nanotubes.jpg" alt="Scanning electron micrograph of a dense, irregular array of titanium dioxide nanotube openings grown on a titanium substrate.">
-          <figcaption>Figure 10. The anodized TiO&#8322; nanotube array that gives the device its high surface area.</figcaption>
+          <figcaption>Figure 11. The anodized TiO&#8322; nanotube array that gives the device its high surface area.</figcaption>
         </figure>
         <p class="meta">Photolithography · anodization · electrospinning · electrochemical impedance spectroscopy · I–V characterization · scikit-learn · pandas</p>
       </div>
