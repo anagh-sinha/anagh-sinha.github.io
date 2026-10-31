@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anagh Sinha</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Anagh Sinha — M.S. Electrical and Computer Engineering, Boston University. Biomedical signal processing, machine learning, and bioelectronic devices.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow measure, left aligned. Hairline rules instead of cards; hanging dates in the margin on wide screens. */
+:root{
+  --paper:#fcfcfa;
+  --ink:#1b1a17;
+  --ink-soft:#56534c;
+  --rule:#d8d5cd;
+  --rule-faint:#eae7df;
+  --accent:#1f3a5f;
+  --measure:40rem;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#13130f;--ink:#e6e3da;--ink-soft:#9c988c;--rule:#33322c;--rule-faint:#24231e;--accent:#9fc0e8;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#13130f;--ink:#e6e3da;--ink-soft:#9c988c;--rule:#33322c;--rule-faint:#24231e;--accent:#9fc0e8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.66;font-weight:400;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:62rem;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.col{max-width:var(--measure)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;text-wrap:balance;margin:0;letter-spacing:-.011em}
+p{margin:0}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.label{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--rule);position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:9}
+.masthead-in{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;padding-block:13px}
+.masthead .name{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);border:0;margin-right:auto;letter-spacing:.01em}
+.masthead a.nl{font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);border:0}
+.masthead a.nl:hover{color:var(--ink)}
+.tbtn{font-family:var(--sans);font-size:.76rem;color:var(--ink-soft);background:none;border:0;cursor:pointer;padding:0}
+.tbtn:hover{color:var(--ink)}
+
+/* opening */
+.intro{padding-block:clamp(44px,6vw,74px) clamp(32px,4vw,48px)}
+.intro h1{font-size:clamp(2rem,4.4vw,2.9rem);font-weight:500}
+.standfirst{font-size:1.14rem;margin-top:20px;max-width:var(--measure)}
+.intro p+p{margin-top:16px}
+.intro .col p{max-width:var(--measure)}
+.affil{font-family:var(--sans);font-size:.92rem;color:var(--ink-soft);margin-top:14px;line-height:1.55}
+.quicklinks{font-family:var(--sans);font-size:.88rem;margin-top:24px;display:flex;gap:18px;flex-wrap:wrap}
+
+/* sections */
+section{padding-block:clamp(34px,4.4vw,52px);border-top:1px solid var(--rule)}
+.sechead{font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:26px}
+.subhead{font-size:1.08rem;font-weight:600;margin-bottom:4px;padding-bottom:9px;border-bottom:1px solid var(--rule-faint)}
+.groupnote{font-family:var(--sans);font-size:.88rem;color:var(--ink-soft);margin-bottom:26px;max-width:var(--measure)}
+
+/* entries with hanging date */
+.entry{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:0 2.2rem;padding-block:26px;border-bottom:1px solid var(--rule-faint)}
+.entry:last-child{border-bottom:0}
+@media (max-width:720px){.entry{grid-template-columns:1fr;gap:0}}
+.entry-when{font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);line-height:1.5;padding-top:.42rem}
+@media (max-width:720px){.entry-when{padding-top:0;margin-bottom:6px}}
+.entry-body{min-width:0;max-width:var(--measure)}
+.entry h3{font-size:1.22rem;font-weight:600}
+.venue{font-family:var(--sans);font-size:.86rem;color:var(--ink-soft);margin-top:6px;line-height:1.55}
+.entry-body p.para{margin-top:14px}
+.runin{font-weight:600}
+.meta{font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);margin-top:14px;line-height:1.6}
+.meta a{font-size:inherit}
+
+figure{margin:20px 0 0}
+/* A figure stays hidden until its image is in place: swap the .slot div for an <img> and delete class="pending". */
+figure.pending{display:none}
+figure img{width:100%;max-width:100%;display:block;border:1px solid var(--rule)}
+.slot{border:1px solid var(--rule);background:var(--rule-faint);aspect-ratio:16/9;max-width:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+.slot span{font-family:var(--sans);font-size:.76rem;color:var(--ink-soft);line-height:1.6}
+figcaption{font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);margin-top:9px;line-height:1.55;max-width:var(--measure)}
+
+/* plain lists */
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding-block:14px;border-bottom:1px solid var(--rule-faint);max-width:var(--measure)}
+ul.plain li:last-child{border-bottom:0}
+ul.plain .sub{display:block;font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);margin-top:5px}
+.prose{max-width:var(--measure)}
+.prose p+p{margin-top:15px}
+dl.facts{max-width:var(--measure);margin:0}
+dl.facts dt{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:20px;font-weight:500}
+dl.facts dt:first-child{margin-top:0}
+dl.facts dd{margin:5px 0 0}
+footer{border-top:1px solid var(--rule);padding-block:28px 36px;font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="masthead"><div class="wrap masthead-in">
+  <a class="name" href="#top">Anagh Sinha</a>
+  <a class="nl" href="#research">Research</a>
+  <a class="nl" href="#positions">Positions</a>
+  <a class="nl" href="#publications">Publications</a>
+  <a class="nl" href="#teaching">Teaching</a>
+  <a class="nl" href="#contact">Contact</a>
+  <button class="tbtn" id="tbtn" type="button">Theme</button>
+</div></div>
+
+<main id="top">
+
+<div class="wrap intro">
+  <div class="col">
+    <h1>Anagh Sinha</h1>
+    <p class="affil">M.S. Electrical and Computer Engineering, Boston University<br>Graduate Teaching Assistant, Electronics Design</p>
+    <p class="standfirst">I work on the two ends of the same problem: the bioelectronic devices that record a physiological signal, and the computational methods that turn that signal into something a clinical decision can rest on.</p>
+    <p class="para" style="margin-top:16px">On the computational side, that has meant high-density ECG analytics for sudden cardiac death risk at IHU Liryc, and machine learning for real-time image-activated cell sorting at the University of Tokyo. On the device side, it has meant metal–insulator–metal biosensors built up from a titanium substrate, and bacteria genetically engineered to display a protein tag that carries therapeutic cargo. The methods differ; the discipline does not. In both, most of the work is understanding the noise well enough to know what the measurement is actually telling you.</p>
+    <p class="quicklinks">
+      <a href="#research">Research</a>
+      <a href="#cv">Curriculum vitae</a>
+      <a href="https://github.com/anagh-sinha">GitHub</a>
+      <a href="https://www.linkedin.com/in/anagh-sinha-/">LinkedIn</a>
+      <a href="mailto:anaghsinha01@gmail.com">Email</a>
+    </p>
+  </div>
+</div>
+
+<section id="research">
+  <div class="wrap">
+    <p class="sechead">Research</p>
+
+    <h2 class="subhead">Biomedical signal processing and machine learning</h2>
+    <p class="groupnote">Methods work on physiological data: cardiac electrophysiology, single-cell imaging, and retrieval systems over personal health records.</p>
+
+    <article class="entry">
+      <p class="entry-when">2026<br>Bordeaux</p>
+      <div class="entry-body">
+        <h3>Repolarization markers for sudden cardiac death risk stratification</h3>
+        <p class="venue">PulsHeart Medical, under the Institute of Heart Research and Cardiac Modeling (IHU Liryc)</p>
+        <p class="para">Sudden cardiac death risk is difficult to assess from the body surface because the repolarization features that carry the prognostic signal sit close to the noise floor of high-density ECG. Separating the two is the substance of the problem, not a preprocessing step before it.</p>
+        <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score — and Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — hd-ecg-pipeline.png<br>pipeline schematic or repolarization metric plot</span></div>
+          <figcaption>Figure 1. Repolarization metric extraction across the high-density lead set.</figcaption>
+        </figure>
+        <p class="meta">Python · NumPy · SciPy · pandas · Matplotlib · Docker · AWS EC2 and S3 · pytest</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2025–2026<br>Remote</p>
+      <div class="entry-body">
+        <h3>Automated delineation and beat-origin labelling for an HD-ECG corpus</h3>
+        <p class="venue">PulsHeart Medical, under IHU Liryc</p>
+        <p class="para">Validating cardiac models requires a large and consistently labelled corpus. Manual delineation does not scale, and label inconsistency propagates silently into every result derived from the data.</p>
+        <p class="para">I expanded the annotation database in Python, automating signal delineation and beat-origin labelling with SciPy, and designed the digital filtering and statistical feature-extraction routines that reduce noise across multichannel recordings. Noise sources were characterized rather than merely suppressed. Annotation quality was visualized in Matplotlib and documented in reproducible Jupyter reports, so label quality could be audited instead of assumed.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — ecg-annotation.png<br>automated delineation against manual annotation</span></div>
+          <figcaption>Figure 2. Automated delineation compared with manual annotation on the same beat.</figcaption>
+        </figure>
+        <p class="meta">Python · SciPy · NumPy · Matplotlib · Jupyter</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2024<br>Tokyo</p>
+      <div class="entry-body">
+        <h3>Machine learning for high-throughput image-activated cell sorting</h3>
+        <p class="venue">Serendipity Lab, Prof. Keisuke Goda, Department of Chemistry, The University of Tokyo · Amgen Scholars Fellowship</p>
+        <p class="para">Fluorescence-activated cell sorting compresses a cell image into an intensity measurement, discarding the morphochemical and spatial structure that frequently carries the information of interest. Image-activated sorting preserves that structure, but the interval between image acquisition and sorting actuation is short enough that practical systems fall back on simple feature gating — which discards the multidimensional data the instrument just acquired.</p>
+        <p class="para">Working on <em>Saccharomyces cerevisiae</em> in a 32 mm microfluidic chip, I processed terabytes of VIFFI imaging data through Python pipelines, extracted shape, size and fluorescence-intensity features with OpenCV and scikit-image, and benchmarked feature gating against Random Forest, XGBoost, PyTorch convolutional networks and autoencoder-based unsupervised models, comparing F1 scores and confusion matrices across them. The approach reached an F1 of 0.81 at 2,000 sorting events per second and a flow rate of 1 m/s.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — iacs-sorting.png<br>sorting system schematic and confusion matrix</span></div>
+          <figcaption>Figure 3. Image-activated cell sorting system, Goda Laboratory, The University of Tokyo.</figcaption>
+        </figure>
+        <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image — <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2024</p>
+      <div class="entry-body">
+        <h3>A route to super-resolution in high-throughput sorting</h3>
+        <p class="venue">Design proposal, Goda Lab, The University of Tokyo</p>
+        <p class="para">The roughly 250 nm spatial resolution of the sorting system is a diffraction limit, and optofluidic systems trade throughput, sensitivity and spatial resolution against one another. Structured illumination microscopy would break that limit, but it requires images under at least three grating orientations — which a single-pass flow system does not obviously afford.</p>
+        <p class="para">I proposed a continuous light-stitching approach: a serial array of rotating scanners paired with charge-coupled device time delay and integration, acquiring the required grating orientations along the flow path rather than by arresting the cell. The proposal was received as technically feasible, and offers a path to adding super-resolution and three-dimensional modalities to an existing platform rather than replacing it.</p>
+        <p class="meta">Structured illumination microscopy · CCD time delay and integration · optofluidic system design</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2025</p>
+      <div class="entry-body">
+        <h3>Retrieval-augmented generation over multiple personal health collections</h3>
+        <p class="venue">Independent project, open source</p>
+        <p class="para">Sleep guidance that is actually useful must draw on wearable recordings, a user profile, location context and a reference knowledge base simultaneously — precisely the data that should not leave the device.</p>
+        <p class="para">I built a retrieval-augmented chatbot that indexes several structured and semi-structured collections into a single retrieval index, with a summarization-based memory layer that carries conversational context across turns. Inference runs entirely locally; the agent is exposed through JSON APIs with YAML-configured pipelines. The components separate cleanly: ingestion builds the index, retrieval serves context, the memory module maintains rolling summaries, and the agent composes the two.</p>
+        <p class="meta">Python · Hugging Face Transformers · SentenceTransformers · NumPy — <a href="https://github.com/anagh-sinha/Multi-collection-Retrieval-Augmented-Generation-RAG-Sleep-Assistant-Chatbot-with-a-Memory-Layer">source and documentation</a></p>
+      </div>
+    </article>
+
+    <h2 class="subhead" style="margin-top:46px">Bioengineering and device fabrication</h2>
+    <p class="groupnote">Biosensors fabricated from the substrate up, and bacteria engineered to carry therapeutic cargo under magnetic guidance.</p>
+
+    <article class="entry">
+      <p class="entry-when">2024<br>Zürich</p>
+      <div class="entry-body">
+        <h3>Genetically encoded surface display for Gram-negative bacterial microrobots</h3>
+        <p class="venue">Master's thesis, Medical Microsystems Lab, Prof. Simone Schürle-Finke, Department of Health Sciences and Technology, ETH Zürich · 9.0/10</p>
+        <p class="para">Chemotactic tumour-homing bacteria, magnetically guided and loaded with cargo, constitute a capable delivery platform. The conventional route to attaching that cargo is harsh chemical functionalization, which damages the cells and is costly at scale.</p>
+        <p class="para">I replaced it with a genetically engineered alternative, engineering <em>E. coli</em> BL21(DE3) and <em>B. subtilis</em> 168 to display a HaloTag fusion that forms a covalent bond with cargo conjugated to a chloroalkane-linker ligand. Primers were designed in Benchling; genomic DNA extracted and purified; the construct amplified by PCR and restriction cloning, assembled by Gibson Assembly, introduced by electroporation or heat-shock transformation, then expressed. For magnetic functionalization I activated PEG-coated iron-oxide nanoparticles with chloroalkane-PEG2000-NHS ester, purified by magnetic separation and dialysis, and actuated the resulting microrobots under rotating fields on a Magnebotix MFG-100-i.</p>
+        <p class="para"><span class="runin">The obstacle.</span> Nanoparticle loading per microrobot was not reproducible, and it was not evident whether the cause lay in tag expression or in the attachment chemistry. I developed a quantification method to settle the question: time-resolved gating against a 0–500 nM Cy5 calibration series, fitted to determine HaloTag molecules per cell after background subtraction, yielding a working equation and a rapid absorbance and fluorescence measurement that could be applied to every batch before functionalization. Nanoparticles per bacterium were then counted from transmission electron micrographs by particle analysis in ImageJ, with distributions plotted in Origin.</p>
+        <p class="para">Approximately 2,000 surface-displayed HaloTag peptides per bacterium stood against only around 200 functionalized nanoparticles. That discrepancy located the failure mode in steric hindrance from the bulky nanoparticles rather than in insufficient tag expression, and indicated a longer PEG cross-linker as the correction. Alongside the thesis I automated the microscopy image analysis in ImageJ macros and Python, replacing manual binding counts, and trained a regression model on in-vitro assay data to predict cargo attachment efficiency and guide subsequent experiments. Protocols were written in full for replication.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — halotag-microrobots.png<br>HaloTag surface display schematic</span></div>
+          <figcaption>Figure 4. HaloTag reacting with chloroalkane-conjugated cargo to form a covalent bond.</figcaption>
+        </figure>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — magnetic-quantification.png<br>nanoparticles per bacterium, counted from TEM</span></div>
+          <figcaption>Figure 5. Distribution of magnetic nanoparticles per bacterium, from transmission electron microscopy.</figcaption>
+        </figure>
+        <p class="meta">Benchling · PCR and restriction cloning · Gibson Assembly · electroporation · confocal microscopy · TEM · ImageJ · Python · scikit-image · scikit-learn · Origin</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2024<br>Zürich</p>
+      <div class="entry-body">
+        <h3>Sortase-mediated surface display on Gram-positive carriers</h3>
+        <p class="venue">Medical Microsystems Lab, ETH Zürich</p>
+        <p class="para">Gram-positive gut probiotics are attractive as carriers because their thick polysaccharide capsules confer considerably longer stability <em>in vivo</em> than Gram-negative hosts. Their surface architecture, however, makes display correspondingly harder.</p>
+        <p class="para">I designed a construct combining HaloTag, a signal peptide, a PEG cross-linker and a sortase binding motif, built on sortase-mediated cell surface display. Using multiple sequence alignment together with protein structure databases including DeepFold, I identified hydrophobic chains that are functionally essential but not conserved between the sortase binding motif and native surface-displayed proteins — the regions where a fusion can be introduced without disrupting what the native display machinery depends upon.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — sortase-strategy.png<br>construct design and display strategy</span></div>
+          <figcaption>Figure 6. Sortase-mediated display strategy for <em>B. subtilis</em>.</figcaption>
+        </figure>
+        <p class="meta">Multiple sequence alignment · DeepFold · sortase display · construct design</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2022–2025<br>Pilani</p>
+      <div class="entry-body">
+        <h3>Label-free metal–insulator–metal biosensing of cancer-associated fibroblasts</h3>
+        <p class="venue">Centre for Research Excellence in Semiconductor Technologies, Prof. Arnab Hazra, BITS Pilani · 10/10</p>
+        <p class="para">Label-free electrochemical biosensors read biomolecules through their intrinsic properties, which makes them both robust and inexpensive. Cancer-associated fibroblasts alter and remodel the extracellular matrix, so that remodelling is in principle electrically detectable — and detecting it cheaply would bring tumour-microenvironment readout within reach of point-of-care diagnosis.</p>
+        <p class="para">I contributed to fabricating a metal–insulator–metal biosensor on a titanium substrate functionalized with high-surface-area TiO₂ nanotubes and a deposited silver top electrode.</p>
+        <p class="para"><span class="runin">The obstacle.</span> Three faults emerged together: poor signal-to-noise ratio, low cell adhesion, and incompatibility between the extracellular matrix and the nanotube surface. I deposited electrospun PMMA nanofibre modelled on native matrix, which is compatible with both cell attachment and matrix deposition, then moved to a lateral device geometry using a 200 µm photolithographically etched indium tin oxide pattern on glass. That change resolved the signal-to-noise problem and eliminated the post-fabrication top-electrode deposition step that had constrained the device's applications.</p>
+        <p class="para">The device gave statistically significant differentiation between normal human primary fibroblasts and chemically induced cancer-associated fibroblasts across growth-factor concentrations, measured by electrochemical impedance spectroscopy and current–voltage hysteresis. I applied k-means and hierarchical clustering to the impedance and I–V data to classify sensor responses, and wrote the Python tooling that standardized electrochemical data analysis across the laboratory.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — caf-biosensor.png<br>device geometry and impedance response</span></div>
+          <figcaption>Figure 7. Lateral metal–insulator–metal device and its impedance response.</figcaption>
+        </figure>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — tio2-nanotubes.png<br>scanning electron micrograph of the nanotube array</span></div>
+          <figcaption>Figure 8. High-surface-area TiO₂ nanotubes grown on titanium.</figcaption>
+        </figure>
+        <p class="meta">Photolithography · anodization · electrospinning · electrochemical impedance spectroscopy · I–V characterization · scikit-learn · pandas</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2022–2025<br>Pilani</p>
+      <div class="entry-body">
+        <h3>Stretchable dry nanomaterial electrodes for long-term electromyography</h3>
+        <p class="venue">Centre for Research Excellence in Semiconductor Technologies, BITS Pilani</p>
+        <p class="para">Gel electrodes dry out, so long-term muscle-activity monitoring degrades over exactly the timescale that makes it clinically interesting. I designed and fabricated stretchable dry electrodes from one- and two-dimensional nanomaterials, including carbon-nanotube constructions, intended to maintain skin contact and signal quality through movement and time rather than through conductive gel.</p>
+        <figure class="pending">
+          <div class="slot"><span>Figure slot — dry-electrode.png<br>electrode on skin with recorded EMG trace</span></div>
+          <figcaption>Figure 9. Dry carbon-nanotube electrode and the electromyogram recorded through it.</figcaption>
+        </figure>
+        <p class="meta">Carbon-nanotube composites · two-dimensional nanomaterials · flexible substrates · EMG acquisition</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="wrap">
+    <p class="sechead">Current directions</p>
+    <div class="prose">
+      <p>Three questions I am looking for collaborators and supervision on.</p>
+      <p style="margin-top:15px"><span class="runin">Tumour and glioma microenvironment.</span> Which gene-expression changes in cancer and neurodegenerative disease microenvironments drive onset and progression, and which of them are legible to a device rather than only to sequencing.</p>
+      <p><span class="runin">Neurobiology and single-cell multi-omics.</span> Therapeutic approaches to Parkinson's disease and brain cancer, combining molecular biology, immunology, instrumentation and computational biology with nanomaterial-based nanoelectronics.</p>
+      <p><span class="runin">Bioelectronic interfaces.</span> The body runs on a dense electrical network. Where that network can be intercepted — and with what, at what scale — determines what can be read from it and modulated in it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="positions">
+  <div class="wrap">
+    <p class="sechead">Positions and education</p>
+    <ul class="plain">
+      <li>M.S. Electrical and Computer Engineering, Boston University, 2026–2028. Dean's Scholarship for Excellence. Graduate Teaching Assistant, Electronics Design.<span class="sub">Boston, Massachusetts</span></li>
+      <li>Junior Signal Processing Engineer, PulsHeart Medical, under IHU Liryc, February–August 2026.<span class="sub">Bordeaux, France</span></li>
+      <li>Signal Processing Consultant, PulsHeart Medical, under IHU Liryc, September 2025–February 2026.<span class="sub">Remote</span></li>
+      <li>Master's Project Student, Medical Microsystems Lab, ETH Zürich, August–December 2024.<span class="sub">Zürich, Switzerland</span></li>
+      <li>Research Trainee, Serendipity Lab, The University of Tokyo, June–August 2024. Amgen Scholars Fellowship.<span class="sub">Tokyo, Japan</span></li>
+      <li>Research Student, CREST, BITS Pilani, January 2022–July 2025.<span class="sub">Pilani, India</span></li>
+      <li>B.E. Electronics and Instrumentation Engineering with M.Sc. Biological Sciences, BITS Pilani, 2020–2025.<span class="sub">Dual degree</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <p class="sechead">Publications and presentations</p>
+    <ul class="plain">
+      <li>Chauhan, S., Joshi, T., Adhikari, U., Sinha, A., Deepa, P., &amp; Sharma, P. K. (2024). Desert legumes as sustainable sources of proteins and bioactive peptides. <em>Food and Humanity</em>, 2, 100295.<span class="sub">doi:10.1016/j.foohum.2024.100295</span></li>
+      <li>Sinha, A., Takada, Y., Ding, T., Goda, K., &amp; Ohya, Y. (2024). High-speed intelligent image-activated cell sorting of yeast cells.<span class="sub">Oral presentation, UTokyo Scholars Program Conference, Tokyo</span></li>
+      <li>Sinha, A., Takada, Y., Ding, T., Goda, K., &amp; Ohya, Y. (2024). Deep learning and machine learning in high-throughput image-based yeast sorting.<span class="sub">Poster, Amgen Scholars Asia Symposium, Tokyo. Best Poster Award</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <p class="sechead">Awards</p>
+    <ul class="plain">
+      <li>Amgen Scholars Fellowship, 2024.<span class="sub">Harvard-directed, Amgen Foundation-funded research fellowship</span></li>
+      <li>Best Poster Presentation, Amgen Scholars Asia Symposium, 2024.</li>
+      <li>Dean's Scholarship for Excellence, Boston University College of Engineering.</li>
+      <li>Spirit of Invention Scholar, 2021.<span class="sub">Institute for International Education and Avery Dennison Foundation; one of ten in India</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <p class="sechead">Teaching and service</p>
+    <div class="prose">
+      <p>I am a graduate teaching assistant for Electronics Design in the ECE department at Boston University, and a research mentor and invited panellist for the Biomedical Engineering Society there, guiding student design projects.</p>
+      <p>Each project on this page states what failed before it states what worked, because the failure is usually the part that transfers. Students working on biosensor fabrication, biosignal pipelines or bacterial surface display are welcome to write to me, particularly when something is not reproducing — I wrote replication protocols for the ETH work for that reason.</p>
+      <p>Before this I founded Oxon, a municipal waste-management pilot run with local government in a town of over 200,000, tracking collection infrastructure and vehicles. I led a team of ten engineers selected from 150 applicants; the work received PIEDS incubation, an Esri partnership, a grant from the Institute for International Education, and TiE support.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <p class="sechead">Curriculum vitae</p>
+    <dl class="facts">
+      <dt>Full CV</dt>
+      <dd><a href="cv.pdf">Download (PDF)</a> — updated October 2026</dd>
+      <dt>Languages and practice</dt>
+      <dd>Python, C++, MATLAB, SQL, Bash. Object-oriented design, unit testing, software validation.</dd>
+      <dt>Machine learning</dt>
+      <dd>PyTorch, scikit-learn, XGBoost. Convolutional networks, random forests, logistic regression, clustering, F1 and confusion-matrix evaluation.</dd>
+      <dt>Data and signals</dt>
+      <dd>NumPy, pandas, SciPy, Matplotlib, scikit-image, Jupyter. Digital filtering, feature extraction, delineation, noise characterization.</dd>
+      <dt>Infrastructure</dt>
+      <dd>Git, Docker, AWS EC2 and S3, CI/CD, Linux.</dd>
+      <dt>Laboratory</dt>
+      <dd>Photolithography, anodization, electrospinning, electroporation, Gibson Assembly, PCR, confocal and transmission electron microscopy.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="sechead">Contact</p>
+    <dl class="facts">
+      <dt>Email</dt><dd><a href="mailto:anaghsinha01@gmail.com">anaghsinha01@gmail.com</a></dd>
+      <dt>Telephone</dt><dd>+1 (708) 390-7011</dd>
+      <dt>Location</dt><dd>Boston, Massachusetts, United States</dd>
+      <dt>Elsewhere</dt><dd><a href="https://github.com/anagh-sinha">GitHub</a> · <a href="https://www.linkedin.com/in/anagh-sinha-/">LinkedIn</a></dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<div class="wrap"><footer><span>Anagh Sinha</span><span>Last updated October 2026</span></footer></div>
+
+<script>
+document.getElementById('tbtn').addEventListener('click',function(){
+  var cur=document.documentElement.getAttribute('data-theme');
+  var dark=cur==='dark'||(!cur&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+});
+</script>
+
+</body>
+</html>
