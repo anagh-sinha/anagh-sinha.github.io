@@ -34,13 +34,11 @@ Figures currently waiting on images:
 |---|---|
 | `hd-ecg-pipeline.png` | Repolarization markers for SCD risk |
 | `ecg-annotation.png` | Automated delineation |
-| `iacs-sorting.png` | Image-activated cell sorting |
-| `halotag-microrobots.png` | Gram-negative microrobots |
-| `magnetic-quantification.png` | Gram-negative microrobots |
-| `sortase-strategy.png` | Gram-positive carriers |
-| `caf-biosensor.png` | Metal–insulator–metal biosensing |
-| `tio2-nanotubes.png` | Metal–insulator–metal biosensing |
 | `dry-electrode.png` | Dry nanomaterial electrodes |
+
+Ten figures are already in place, recovered from the previous WordPress site, resized to
+1600 px and flattened onto white (several were transparent PNGs whose black text would
+otherwise vanish on a dark background).
 
 ## Adding a project
 
