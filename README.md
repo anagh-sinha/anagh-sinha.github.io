@@ -60,3 +60,26 @@ that name and the link works; re-commit over it on each update and the link keep
 - One measure (`--measure`) controls text column width everywhere.
 - Fonts are Spectral and IBM Plex Sans from Google Fonts. Everything else is inline.
 - `.nojekyll` stops GitHub from running Jekyll over the file, which is unnecessary here.
+
+## Writing section
+
+The Writing section is rebuilt by `scripts/build_writing.py`, run daily by
+`.github/workflows/writing.yml` (and whenever `writing/linkedin.json` changes).
+
+- **Substack** posts from soulbench.substack.com appear automatically within a day of
+  publishing. To show one immediately: Actions → Update writing → Run workflow.
+- **LinkedIn** has no public feed, so add each post to `writing/linkedin.json` and commit:
+
+```json
+[
+  {
+    "title": "Short title for the post",
+    "summary": "One line on what it covers",
+    "date": "2026-10-14",
+    "url": "https://www.linkedin.com/posts/..."
+  }
+]
+```
+
+Get the URL from the post's ⋯ menu → Copy link to post. Newest posts sort to the top
+regardless of order in the file.
