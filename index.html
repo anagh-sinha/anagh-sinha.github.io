@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Anagh Sinha</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Anagh Sinha — M.S. Electrical and Computer Engineering, Boston University. Machine learning, computer vision, signal processing, LLM applications, full-stack software, and hardware design.">
+<meta name="description" content="Anagh Sinha. M.S. Electrical and Computer Engineering, Boston University. Machine learning, computer vision, signal processing, LLM applications, full-stack software, and hardware design.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
@@ -269,16 +269,16 @@ img{max-width:100%}
   <div class="intro-grid">
   <div class="col">
     <h1>Anagh Sinha</h1>
-    <p class="affil">Electrical and computer engineer — machine learning, software, signal processing<br>M.S. Electrical and Computer Engineering, Boston University · Graduate Teaching Assistant</p>
-    <p class="standfirst">Welcome. I build machine learning and software systems end to end — from messy raw data to something tested, deployed and trustworthy. Everything here is real work, and almost all of it is open: the code, the figures, the parts that did not work the first time.</p>
-    <p class="para" style="margin-top:16px"><span class="runin">About me:</span> I am a master's student in electrical and computer engineering at Boston University, working across machine learning, computer vision, signal processing and software. I am drawn to problems where the data arrives messy and the answer has to hold up — which is most real problems.</p>
-    <p class="para">Over the years I have applied machine learning across signals, images, speech and language. I have shipped production data pipelines for a medical device company and for research laboratories in France, Japan and Switzerland, built web applications, browser extensions and LLM agents, and designed hardware from the substrate up. Much of my experience comes from scientific and clinical data, which is an unforgiving place to learn these habits; the methods travel to any domain. I am looking for machine learning, data and software engineering roles.</p>
+    <p class="affil">Electrical and computer engineer. Machine learning, software, signal processing<br>M.S. Electrical and Computer Engineering, Boston University · Graduate Teaching Assistant</p>
+    <p class="standfirst">Welcome. I am a master's student in electrical and computer engineering at Boston University. I work on machine learning, computer vision, signal processing and the software around them.</p>
+    <p class="para" style="margin-top:16px"><span class="runin">About me:</span> Most of what I do starts with data that is messy and ends with something that runs, is tested, and gives an answer I can explain. I like the part in the middle, where you find out what the measurement is actually telling you.</p>
+    <p class="para">I have written production data pipelines for a medical device company and for research labs in France, Japan and Switzerland. I have also built web apps, a browser extension, voice and retrieval systems on top of language models, and hardware starting from a blank wafer. A lot of that work used scientific and clinical data, which is a strict place to learn good habits, and the methods are the same anywhere else. I am looking for machine learning, data and software engineering roles.</p>
     <ul class="points">
-      <li><b>Machine learning.</b> PyTorch, scikit-learn, XGBoost, SHAP. Classification, computer vision and model evaluation I can defend — including when the honest answer is that a model is not good enough yet.</li>
-      <li><b>Data and signals.</b> Python, NumPy, SciPy, pandas, OpenCV. Turning noisy, incomplete, real-world measurements into features and numbers that hold up under scrutiny.</li>
-      <li><b>LLM applications.</b> LangChain, Hugging Face, Whisper, the OpenAI and Claude APIs. Retrieval, memory, agents and voice interfaces, built so tested code computes the answers rather than the model.</li>
-      <li><b>Software and infrastructure.</b> Docker, AWS, Git and CI, Flask, JavaScript, SQL, pytest. I ship the whole thing: pipeline, service, interface and tests, not just the notebook.</li>
-      <li><b>Hardware.</b> Photolithography, electrospinning, impedance spectroscopy, analog front ends. I have built the sensors too, which is why I know where a signal's noise comes from.</li>
+      <li><b>Machine learning.</b> PyTorch, scikit-learn, XGBoost, SHAP. Classification, computer vision, and evaluation I can back up, including when the result is that a model is not good enough yet.</li>
+      <li><b>Data and signals.</b> Python, NumPy, SciPy, pandas, OpenCV. Getting usable features out of noisy and incomplete measurements.</li>
+      <li><b>Language models.</b> LangChain, Hugging Face, Whisper, the OpenAI and Claude APIs. Retrieval, memory, agents and voice, set up so the numbers come from code I have tested.</li>
+      <li><b>Software.</b> Docker, AWS, Git and CI, Flask, JavaScript, SQL, pytest. I build the pipeline, the service, the interface and the tests, not only the notebook.</li>
+      <li><b>Hardware.</b> Photolithography, electrospinning, impedance spectroscopy, analog front ends. I have built sensors myself, so I know where their noise comes from.</li>
     </ul>
     <p class="quicklinks">
       <a href="#positions">Experience</a>
@@ -322,7 +322,7 @@ img{max-width:100%}
         <h3>Repolarization markers for sudden cardiac death risk stratification</h3>
         <p class="venue"><img class="vlogo" src="images/logos/liryc.png" alt="">PulsHeart Medical, under the Institute of Heart Research and Cardiac Modeling (IHU Liryc)</p>
         <p class="para">Sudden cardiac death risk is difficult to assess from the body surface because the repolarization features that carry the prognostic signal sit close to the noise floor of high-density ECG. Separating the two is the substance of the problem, not a preprocessing step before it.</p>
-        <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score — and Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
+        <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score, plus Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
         <figure>
           <img src="images/t-wave-end-algorithm.jpg" alt="Six numbered panels tracing an algorithm on an ECG beat: find T-peaks; define peak-based allowed regions; draw tangents along the steepest local slopes; find the intersection with an adaptive ST and TP baseline; refine for slurred morphology; and mark the precise T-wave onset and end.">
           <figcaption>Figure 1. The T-wave-end routine, step by step. Tangents are taken along the steepest local slopes and intersected with an adaptive baseline, which keeps the measurement stable on bifid and slurred beats where a fixed baseline drifts.</figcaption>
@@ -333,7 +333,7 @@ img{max-width:100%}
         </figure>
         <figure>
           <img src="images/repolarization-dispersion-stats.jpg" alt="Benchmark output for two dispersion metrics: summary tables of case counts, sensitivity and specificity beside histograms of each metric split by arrhythmia status, with the chosen cutoff drawn as a dashed line and the interval being measured sketched on a beat.">
-          <figcaption>Figure 1c. How a candidate metric is benchmarked. Each one is computed across the cohort, its distribution split by outcome, a cutoff chosen, and the resulting table reported — so a marker is accepted or rejected on evidence a reviewer can inspect.</figcaption>
+          <figcaption>Figure 1c. How a candidate metric is benchmarked. Each one is computed across the cohort, its distribution split by outcome, a cutoff chosen, and the resulting table reported, so a marker is accepted or rejected on evidence a reviewer can inspect.</figcaption>
         </figure>
         <p class="meta">Python · NumPy · SciPy · pandas · Matplotlib · Docker · AWS EC2 and S3 · pytest</p>
       </div>
@@ -355,7 +355,7 @@ img{max-width:100%}
       <div class="entry-body">
         <h3>Machine learning for high-throughput image-activated cell sorting</h3>
         <p class="venue"><img class="vlogo" src="images/logos/utokyo.svg" alt="">Serendipity Lab, Prof. Keisuke Goda, Department of Chemistry, The University of Tokyo · Amgen Scholars Fellowship</p>
-        <p class="para">Fluorescence-activated cell sorting compresses a cell image into an intensity measurement, discarding the morphochemical and spatial structure that frequently carries the information of interest. Image-activated sorting preserves that structure, but the interval between image acquisition and sorting actuation is short enough that practical systems fall back on simple feature gating — which discards the multidimensional data the instrument just acquired.</p>
+        <p class="para">Fluorescence-activated cell sorting compresses a cell image into an intensity measurement, discarding the morphochemical and spatial structure that frequently carries the information of interest. Image-activated sorting preserves that structure, but the interval between image acquisition and sorting actuation is short enough that practical systems fall back on simple feature gating, which discards the multidimensional data the instrument just acquired.</p>
         <p class="para">Working on <em>Saccharomyces cerevisiae</em> in a 32 mm microfluidic chip, I processed terabytes of VIFFI imaging data through Python pipelines, extracted shape, size and fluorescence-intensity features with OpenCV and scikit-image, and benchmarked feature gating against Random Forest, XGBoost, PyTorch convolutional networks and autoencoder-based unsupervised models, comparing F1 scores and confusion matrices across them. The approach reached an F1 of 0.81 at 2,000 sorting events per second and a flow rate of 1 m/s.</p>
         <figure>
           <img src="images/iacs.jpg" alt="Labelled schematic of the image-activated cell sorting system: hydrodynamic focuser, acoustic focuser, optical microscope, image processor and cell sorter arranged along a microfluidic chip.">
@@ -369,7 +369,7 @@ img{max-width:100%}
           <img src="images/goda-poster.jpg" alt="Conference poster titled Deep Learning and Machine Learning in High Throughput Image-Based Yeast Sorting, laid out in columns: abstract, material, method, results and discussion with classifier comparison charts and confusion matrices, future prospects, conclusion and references.">
           <figcaption>Figure 0b. The poster as presented. The best single gated feature reached an F1 of 0.73, which is the baseline the learned classifiers had to beat.</figcaption>
         </figure>
-        <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image — <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
+        <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image. <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
       </div>
     </article>
 
@@ -378,7 +378,7 @@ img{max-width:100%}
       <div class="entry-body">
         <h3>A route to super-resolution in high-throughput sorting</h3>
         <p class="venue">Design proposal, Goda Lab, The University of Tokyo</p>
-        <p class="para">The roughly 250 nm spatial resolution of the sorting system is a diffraction limit, and optofluidic systems trade throughput, sensitivity and spatial resolution against one another. Structured illumination microscopy would break that limit, but it requires images under at least three grating orientations — which a single-pass flow system does not obviously afford.</p>
+        <p class="para">The roughly 250 nm spatial resolution of the sorting system is a diffraction limit, and optofluidic systems trade throughput, sensitivity and spatial resolution against one another. Structured illumination microscopy would break that limit, but it requires images under at least three grating orientations, which a single-pass flow system does not obviously afford.</p>
         <p class="para">I proposed a continuous light-stitching approach: a serial array of rotating scanners paired with charge-coupled device time delay and integration, acquiring the required grating orientations along the flow path rather than by arresting the cell. The proposal was received as technically feasible, and offers a path to adding super-resolution and three-dimensional modalities to an existing platform rather than replacing it.</p>
         <figure>
           <img src="images/super-resolution.jpg" alt="High-resolution fluorescence micrograph of a single cell, its nucleus and radiating cytoskeletal structure rendered in distinct colour channels.">
@@ -393,9 +393,9 @@ img{max-width:100%}
       <div class="entry-body">
         <h3>Retrieval-augmented generation over multiple personal health collections</h3>
         <p class="venue">Independent project, open source</p>
-        <p class="para">Sleep guidance that is actually useful must draw on wearable recordings, a user profile, location context and a reference knowledge base simultaneously — precisely the data that should not leave the device.</p>
+        <p class="para">Sleep guidance that is actually useful must draw on wearable recordings, a user profile, location context and a reference knowledge base simultaneously, which is precisely the data that should not leave the device.</p>
         <p class="para">I built a retrieval-augmented chatbot that indexes several structured and semi-structured collections into a single retrieval index, with a summarization-based memory layer that carries conversational context across turns. Inference runs entirely locally; the agent is exposed through JSON APIs with YAML-configured pipelines. The components separate cleanly: ingestion builds the index, retrieval serves context, the memory module maintains rolling summaries, and the agent composes the two.</p>
-        <p class="meta">Python · Hugging Face Transformers · SentenceTransformers · NumPy — <a href="https://github.com/anagh-sinha/Multi-collection-Retrieval-Augmented-Generation-RAG-Sleep-Assistant-Chatbot-with-a-Memory-Layer">source and documentation</a></p>
+        <p class="meta">Python · Hugging Face Transformers · SentenceTransformers · NumPy. <a href="https://github.com/anagh-sinha/Multi-collection-Retrieval-Augmented-Generation-RAG-Sleep-Assistant-Chatbot-with-a-Memory-Layer">source and documentation</a></p>
       </div>
     </article>
 
@@ -429,7 +429,7 @@ img{max-width:100%}
         </figure>
         <figure>
           <img src="images/magnetic-quantification.jpg" alt="Transmission electron micrographs of a HaloTag-expressing bacterium densely studded with nanoparticles and of an unlabelled negative control, beside a bar chart of nanoparticle count per cell.">
-          <figcaption>Figure 7. Transmission electron microscopy of magnetic nanoparticle attachment. Counts centre near 150 per cell against a negative control at essentially zero &mdash; far below the number of tags available.</figcaption>
+          <figcaption>Figure 7. Transmission electron microscopy of magnetic nanoparticle attachment. Counts centre near 150 per cell against a negative control at essentially zero, far below the number of tags available.</figcaption>
         </figure>
         <p class="meta">Benchling · PCR and restriction cloning · Gibson Assembly · electroporation · confocal microscopy · TEM · ImageJ · Python · scikit-image · scikit-learn · Origin</p>
       </div>
@@ -441,7 +441,7 @@ img{max-width:100%}
         <h3>Sortase-mediated surface display on Gram-positive carriers</h3>
         <p class="venue">Medical Microsystems Lab, ETH Zürich</p>
         <p class="para">Gram-positive gut probiotics are attractive as carriers because their thick polysaccharide capsules confer considerably longer stability <em>in vivo</em> than Gram-negative hosts. Their surface architecture, however, makes display correspondingly harder.</p>
-        <p class="para">I designed a construct combining HaloTag, a signal peptide, a PEG cross-linker and a sortase binding motif, built on sortase-mediated cell surface display. Using multiple sequence alignment together with protein structure databases including DeepFold, I identified hydrophobic chains that are functionally essential but not conserved between the sortase binding motif and native surface-displayed proteins — the regions where a fusion can be introduced without disrupting what the native display machinery depends upon.</p>
+        <p class="para">I designed a construct combining HaloTag, a signal peptide, a PEG cross-linker and a sortase binding motif, built on sortase-mediated cell surface display. Using multiple sequence alignment together with protein structure databases including DeepFold, I identified hydrophobic chains that are functionally essential but not conserved between the sortase binding motif and native surface-displayed proteins, the regions where a fusion can be introduced without disrupting what the native display machinery depends upon.</p>
         <figure>
           <img src="images/sortase-strategy.jpg" alt="Schematic of sortase-mediated anchoring in Gram-positive bacteria: a HaloTag, linker and LPXTG sorting signal construct processed by sortase and integrated into the peptidoglycan cell wall.">
           <figcaption>Figure 8. Sortase-mediated display in <em>B. subtilis</em>. An LPXTG sorting signal lets sortase anchor the HaloTag construct covalently into the peptidoglycan wall.</figcaption>
@@ -455,7 +455,7 @@ img{max-width:100%}
       <div class="entry-body">
         <h3>Label-free metal–insulator–metal biosensing of cancer-associated fibroblasts</h3>
         <p class="venue">Centre for Research Excellence in Semiconductor Technologies, Prof. Arnab Hazra, BITS Pilani · 10/10</p>
-        <p class="para">Label-free electrochemical biosensors read biomolecules through their intrinsic properties, which makes them both robust and inexpensive. Cancer-associated fibroblasts alter and remodel the extracellular matrix, so that remodelling is in principle electrically detectable — and detecting it cheaply would bring tumour-microenvironment readout within reach of point-of-care diagnosis.</p>
+        <p class="para">Label-free electrochemical biosensors read biomolecules through their intrinsic properties, which makes them both robust and inexpensive. Cancer-associated fibroblasts alter and remodel the extracellular matrix, so that remodelling is in principle electrically detectable, and detecting it cheaply would bring tumour-microenvironment readout within reach of point-of-care diagnosis.</p>
         <p class="para">I contributed to fabricating a metal–insulator–metal biosensor on a titanium substrate functionalized with high-surface-area TiO₂ nanotubes and a deposited silver top electrode.</p>
         <p class="para"><span class="runin">The obstacle.</span> Three faults emerged together: poor signal-to-noise ratio, low cell adhesion, and incompatibility between the extracellular matrix and the nanotube surface. I deposited electrospun PMMA nanofibre modelled on native matrix, which is compatible with both cell attachment and matrix deposition, then moved to a lateral device geometry using a 200 µm photolithographically etched indium tin oxide pattern on glass. That change resolved the signal-to-noise problem and eliminated the post-fabrication top-electrode deposition step that had constrained the device's applications.</p>
         <p class="para">The device gave statistically significant differentiation between normal human primary fibroblasts and chemically induced cancer-associated fibroblasts across growth-factor concentrations, measured by electrochemical impedance spectroscopy and current–voltage hysteresis. I applied k-means and hierarchical clustering to the impedance and I–V data to classify sensor responses, and wrote the Python tooling that standardized electrochemical data analysis across the laboratory.</p>
@@ -490,7 +490,7 @@ img{max-width:100%}
         <p class="venue">Centre for Research Excellence in Semiconductor Technologies, BITS Pilani</p>
         <p class="para">Gel electrodes dry out, so long-term muscle-activity monitoring degrades over exactly the timescale that makes it clinically interesting. I designed and fabricated stretchable dry electrodes from one- and two-dimensional nanomaterials, including carbon-nanotube constructions, intended to maintain skin contact and signal quality through movement and time rather than through conductive gel.</p>
         <figure class="pending">
-          <div class="slot"><span>Figure slot — dry-electrode.png<br>electrode on skin with recorded EMG trace</span></div>
+          <div class="slot"><span>Figure slot: dry-electrode.png<br>electrode on skin with recorded EMG trace</span></div>
           <figcaption>Figure 9. Dry carbon-nanotube electrode and the electromyogram recorded through it.</figcaption>
         </figure>
         <p class="meta">Carbon-nanotube composites · two-dimensional nanomaterials · flexible substrates · EMG acquisition</p>
@@ -503,7 +503,7 @@ img{max-width:100%}
         <h3><a href="https://anagh-sinha.github.io/biostride-website/">BioStride GoldenHourDx: a point-of-care test for traumatic brain injury</a></h3>
         <p class="venue">Co-founder and CEO, BioStride Diagnostics</p>
         <p class="para">After a head injury, the decision that matters is whether a patient needs a CT scan, and in much of India that scan is hours away. A blood test that answers the question at the roadside changes what the first hour can be used for.</p>
-        <p class="para">I designed the device around the electrochemical detection I had already built in the laboratory: a finger-prick sample, a microfluidic cartridge that separates plasma and runs the immunoassay on-chip, and a microelectrode array that reads the biomarkers electrically on a handheld unit. The readout is deliberately a traffic light rather than a number, because the user is a paramedic deciding whether to transport, not a laboratory technician.</p>
+        <p class="para">I designed the device around the electrochemical detection I had already built in the laboratory: a finger-prick sample, a microfluidic cartridge that separates plasma and runs the immunoassay on-chip, and a microelectrode array that reads the biomarkers electrically on a handheld unit. The result shows as a traffic light rather than a number, because the person reading it is a paramedic deciding whether to drive to a hospital.</p>
         <figure>
           <img src="images/goldenhourdx-microfluidic.jpg" alt="Labelled cartridge diagram: a blood drop enters a start reservoir, passes a separation fleece and dry reagent store, is mixed and incubated along a serpentine channel, and reaches two biosensor readout zones, with insets showing antibody binding and the enzyme reaction that produces the electroactive product.">
           <figcaption>Figure 14. The cartridge. Blood is separated and mixed with dry reagents on-chip, unbound conjugate is washed to a drain, and the remaining enzyme product is read at the microelectrode array.</figcaption>
@@ -512,7 +512,7 @@ img{max-width:100%}
           <img src="images/goldenhourdx-workflow.jpg" alt="Workflow strip: lancet and finger-prick, the electrode strip, its layered construction, antibody-functionalized surface, the handheld reader with amplifier circuit, a chart of biomarker activity over time, and a red-amber-green result indicator.">
           <figcaption>Figure 15. From finger-prick to decision. The same assay chain ends in a three-state indicator that tells a first responder whether imaging is needed.</figcaption>
         </figure>
-        <p class="meta">Electrochemical immunoassay · microfluidic cartridge design · microelectrode arrays · analog front-end design — <a href="https://anagh-sinha.github.io/biostride-website/">biostride site</a></p>
+        <p class="meta">Electrochemical immunoassay · microfluidic cartridge design · microelectrode arrays · analog front-end design. <a href="https://anagh-sinha.github.io/biostride-website/">biostride site</a></p>
       </div>
     </article>
   </div>
@@ -533,7 +533,7 @@ img{max-width:100%}
           <li>Classified with ECGFounder, a pretrained 150-label 12-lead model in PyTorch. Weights are served from the Hugging Face Hub.</li>
           <li>Deployed as a Gradio app in Docker. Images are processed in memory and never stored. Tested on synthetic ECGs and validated against PTB-XL.</li>
         </ul>
-        <p class="meta">Python · PyTorch · OpenCV · NeuroKit2 · SciPy · Hugging Face · Gradio · Docker · pytest — <a href="https://github.com/anagh-sinha/OpenECG">source</a></p>
+        <p class="meta">Python · PyTorch · OpenCV · NeuroKit2 · SciPy · Hugging Face · Gradio · Docker · pytest. <a href="https://github.com/anagh-sinha/OpenECG">source</a></p>
       </div>
     </article>
 
@@ -547,7 +547,7 @@ img{max-width:100%}
           <li>Compared about 40 interpretable clinical ECG markers (logistic regression, gradient-boosted trees, SHAP) against frozen VGG-16 image features and ECG foundation-model embeddings.</li>
           <li>Pilot result on 4,825 held-out ECGs: AUROC 0.848 and 77% balanced accuracy for reduced ejection fraction.</li>
         </ul>
-        <p class="meta">Python · scikit-learn · XGBoost · LightGBM · SHAP · PyTorch · WFDB · NeuroKit2 — code on request</p>
+        <p class="meta">Python · scikit-learn · XGBoost · LightGBM · SHAP · PyTorch · WFDB · NeuroKit2. Code on request</p>
       </div>
     </article>
 
@@ -561,7 +561,7 @@ img{max-width:100%}
           <li>Verified 289 of 289 checks against an independent pandas implementation. Access control means each researcher sees only their own awards.</li>
           <li>Built PA15 Automator, a Streamlit tool that turns a budget-versus-actuals file into formatted payroll reports. It passes 13 of 13 tests, including a mock SAP page.</li>
         </ul>
-        <p class="meta">Python · pandas · Claude API · Streamlit · JavaScript · pytest — runs on synthetic data only — <a href="https://github.com/anagh-sinha/finance-automation">source</a></p>
+        <p class="meta">Python · pandas · Claude API · Streamlit · JavaScript · pytest. Runs on synthetic data only. <a href="https://github.com/anagh-sinha/finance-automation">source</a></p>
       </div>
     </article>
 
@@ -575,7 +575,7 @@ img{max-width:100%}
           <li>Measures accuracy honestly, with leave-one-out evaluation and a 500-fold label-permutation test.</li>
           <li>Adds a whisper-to-type mode that runs Whisper or NVIDIA Parakeet locally on the CPU. Audio is never saved or sent anywhere.</li>
         </ul>
-        <p class="meta">Python · MediaPipe · OpenCV · SciPy · faster-whisper · ONNX · pytest — <a href="https://github.com/anagh-sinha/subvox-win">source</a></p>
+        <p class="meta">Python · MediaPipe · OpenCV · SciPy · faster-whisper · ONNX · pytest. <a href="https://github.com/anagh-sinha/subvox-win">source</a></p>
       </div>
     </article>
 
@@ -589,7 +589,7 @@ img{max-width:100%}
           <li>Parses PDFs with pdf.js and structures the CV with Chrome's built-in on-device AI, so the CV stays on the user's machine.</li>
           <li>Handles Workday's repeating experience and education blocks and its skill pickers.</li>
         </ul>
-        <p class="meta">JavaScript · Chrome Extensions API · pdf.js · Chrome built-in AI — code on request</p>
+        <p class="meta">JavaScript · Chrome Extensions API · pdf.js · on-device parsing in the browser. Code on request</p>
       </div>
     </article>
 
@@ -602,7 +602,7 @@ img{max-width:100%}
           <li>Built a voice-to-voice agent: Whisper transcribes the question, an OpenAI GPT model answers using the user's sleep diary and wearable metrics, and pyttsx3 speaks the reply. It falls back to stored answers if the API fails.</li>
           <li>Built a companion web dashboard in Flask and Socket.IO with real-time chat. Packaged with Docker and gunicorn for deployment on Render.</li>
           <li>Specified the wider system: SleepPPG-Net2 for four-class sleep staging from raw photoplethysmography, a small conversational model for coaching, semantic embeddings for retrieval, and on-device inference so intimate sleep data stays on the device.</li>
-          <li>Designed the data fusion to survive real wearables — missing channels, sensor dropouts and misaligned timestamps — because a recommendation engine that needs clean input is useless overnight.</li>
+          <li>Designed the data fusion to survive real wearables, meaning missing channels, sensor dropouts and clocks that disagree. A system that needs clean input is no use overnight.</li>
         </ul>
         <div class="gallery wide" role="group" aria-label="Sleep AI design deck, scrollable">
           <figure class="shot"><img src="images/sleepai/s01.jpg" alt="Title slide: Elevating Sleep Tech with AI, over a night sky, with a voice assistant listening state." loading="lazy"><figcaption>The pitch</figcaption></figure>
@@ -614,7 +614,7 @@ img{max-width:100%}
           <figure class="shot"><img src="images/sleepai/s07.jpg" alt="Implementation slide on robust data fusion for missing data and sensor failures, and reinforcement learning to improve recommendations over time." loading="lazy"><figcaption>Robustness</figcaption></figure>
           <figure class="shot"><img src="images/sleepai/s08.jpg" alt="Vision slide: sleep shouldn't be a battle, covering hardware integration, data analysis and the personalized user experience." loading="lazy"><figcaption>Where it goes</figcaption></figure>
         </div>
-        <p class="meta">Python · OpenAI API · Whisper · Flask · Socket.IO · Docker — <a href="https://github.com/anagh-sinha/Voice-to-Voice-Sleep-Coaching-Agent">voice agent</a> · <a href="https://github.com/anagh-sinha/sleep-ai">web app</a></p>
+        <p class="meta">Python · OpenAI API · Whisper · Flask · Socket.IO · Docker. <a href="https://github.com/anagh-sinha/Voice-to-Voice-Sleep-Coaching-Agent">voice agent</a> · <a href="https://github.com/anagh-sinha/sleep-ai">web app</a></p>
       </div>
     </article>
 
@@ -627,7 +627,7 @@ img{max-width:100%}
           <li>Computed heart rate from EDF recordings with two independent methods, autocorrelation and Pan-Tompkins peak detection, and cross-checked them. On a 300-second recording they agree within 0.7 bpm.</li>
           <li>Structured as a modular Python package with tests on synthetic signals.</li>
         </ul>
-        <p class="meta">Python · NumPy · SciPy · pyEDFlib · Matplotlib — <a href="https://github.com/anagh-sinha/heart-rate-computation">source</a></p>
+        <p class="meta">Python · NumPy · SciPy · pyEDFlib · Matplotlib. <a href="https://github.com/anagh-sinha/heart-rate-computation">source</a></p>
       </div>
     </article>
 
@@ -639,7 +639,7 @@ img{max-width:100%}
         <ul class="points">
           <li>Built a retrieval-augmented QA bot over research papers: PDF loading, text splitting, embeddings, a Chroma vector store and a retriever, with IBM watsonx as the LLM and a Gradio interface.</li>
         </ul>
-        <p class="meta">Python · LangChain · ChromaDB · SentenceTransformers · IBM watsonx · Gradio — <a href="https://github.com/anagh-sinha/AI-Literature-RAG-Assitant">source</a></p>
+        <p class="meta">Python · LangChain · ChromaDB · SentenceTransformers · IBM watsonx · Gradio. <a href="https://github.com/anagh-sinha/AI-Literature-RAG-Assitant">source</a></p>
       </div>
     </article>
 
@@ -648,7 +648,7 @@ img{max-width:100%}
       <div class="entry-body">
         <h3>Oxon: a municipal waste-management app run with local government</h3>
         <p class="venue">Founder, Oxon Life Pvt Ltd · Esri Startup Program partner · PIEDS incubation</p>
-        <p class="para">A town of more than 200,000 people had no map of its own waste infrastructure, so collection routes were set by habit and a missed bin went unrecorded. We built the map and the reporting loop around it, and ran it with the municipal authority rather than beside it.</p>
+        <p class="para">A town of more than 200,000 people had no map of its own waste infrastructure, so collection routes were set by habit and a missed bin went unrecorded. We built the map, and the reporting system on top of it, and ran the pilot together with the municipal authority.</p>
         <ul class="points">
           <li>Built a sustainable mapping layer over Esri GIS: bins and public toilets as live points, a heat map of reported waste density, and routing to the nearest facility.</li>
           <li>Added one-touch complaint reporting. A resident photographs a problem, the location is captured automatically, and the complaint goes to the responsible authority with a tracking state.</li>
@@ -707,7 +707,7 @@ img{max-width:100%}
       <p>Three questions I am looking for collaborators and supervision on.</p>
       <p style="margin-top:15px"><span class="runin">Tumour and glioma microenvironment.</span> Which gene-expression changes in cancer and neurodegenerative disease microenvironments drive onset and progression, and which of them are legible to a device rather than only to sequencing.</p>
       <p><span class="runin">Neurobiology and single-cell multi-omics.</span> Therapeutic approaches to Parkinson's disease and brain cancer, combining molecular biology, immunology, instrumentation and computational biology with nanomaterial-based nanoelectronics.</p>
-      <p><span class="runin">Bioelectronic interfaces.</span> The body runs on a dense electrical network. Where that network can be intercepted — and with what, at what scale — determines what can be read from it and modulated in it.</p>
+      <p><span class="runin">Bioelectronic interfaces.</span> The body runs on a dense electrical network. Where that network can be intercepted, and with what, at what scale, determines what can be read from it and modulated in it.</p>
     </div>
   </div>
 </section>
@@ -720,7 +720,7 @@ img{max-width:100%}
         <img src="images/bu-research-panel.jpg" alt="Six panellists seated in front of a lecture-hall audience, under projector screens titled Postgraduate Research Panel.">
         <figcaption>Panellist at the Postgraduate Research Panel, Boston University, November 2026.</figcaption>
       </figure>
-      <p>Each project on this page states what failed before it states what worked, because the failure is usually the part that transfers. Students working on biosensor fabrication, biosignal pipelines or bacterial surface display are welcome to write to me, particularly when something is not reproducing — I wrote replication protocols for the ETH work for that reason.</p>
+      <p>Each project on this page states what failed before it states what worked, because the failure is usually the part that transfers. Students working on biosensor fabrication, biosignal pipelines or bacterial surface display are welcome to write to me, particularly when something is not reproducing. I wrote replication protocols for the ETH work for that reason.</p>
       <p>Before this I founded Oxon, a municipal waste-management pilot run with local government in a town of over 200,000, tracking collection infrastructure and vehicles. I led a team of ten engineers selected from 150 applicants; the work received PIEDS incubation, an Esri partnership, a grant from the Institute for International Education, and TiE support.</p>
     </div>
   </div>
@@ -751,7 +751,7 @@ img{max-width:100%}
     <p class="meta" style="margin-bottom:26px"><a href="cv.pdf" download>Download the CV (PDF)</a></p>
     <dl class="facts">
       <dt>Full CV</dt>
-      <dd><a href="cv.pdf">Download (PDF)</a> — updated November 2026</dd>
+      <dd><a href="cv.pdf">Download (PDF)</a>, updated November 2026</dd>
       <dt>Languages and practice</dt>
       <dd>Python, C++, MATLAB, SQL, Bash. Object-oriented design, unit testing, software validation.</dd>
       <dt>Machine learning</dt>
@@ -770,7 +770,7 @@ img{max-width:100%}
 <section id="contact">
   <div class="wrap">
     <p class="sechead">Connect with me</p>
-    <p class="groupnote">I read everything that arrives here. Research collaborations, roles, or a question about any project on this page are all welcome.</p>
+    <p class="groupnote">I read everything that comes in. Jobs, collaborations, or a question about anything on this page.</p>
 
     <ul class="social" aria-label="Elsewhere">
       <li><a href="https://github.com/anagh-sinha" aria-label="GitHub">
