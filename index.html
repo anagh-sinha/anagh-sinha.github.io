@@ -112,7 +112,33 @@ dl.facts dt{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-tr
 dl.facts dt:first-child{margin-top:0}
 dl.facts dd{margin:5px 0 0}
 footer{border-top:1px solid var(--rule);padding-block:28px 36px;font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* embedded CV */
+.cvframe{max-width:var(--measure);border:1px solid var(--rule);background:var(--rule-faint);margin-bottom:14px}
+.cvframe object{display:block;width:100%;height:min(86vh,52rem);border:0}
+@media (max-width:720px){.cvframe object{height:70vh}}
+.cvfallback{font-family:var(--sans);font-size:.88rem;padding:24px;color:var(--ink-soft)}
+
+/* motion: sections and figures settle in as they are reached */
+html{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.intro .col>*{animation:rise .72s cubic-bezier(.22,.61,.36,1) both}
+.intro .col>*:nth-child(2){animation-delay:.06s}
+.intro .col>*:nth-child(3){animation-delay:.12s}
+.intro .col>*:nth-child(4){animation-delay:.18s}
+.intro .col>*:nth-child(5){animation-delay:.24s}
+.intro .col>*:nth-child(6){animation-delay:.3s}
+.portrait img{animation:fade 1.1s ease both .15s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+figure img{transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .4s ease}
+figure:hover img{transform:scale(1.012);box-shadow:0 6px 28px rgba(0,0,0,.14)}
+.entry h3 a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .36s cubic-bezier(.22,.61,.36,1)}
+.entry h3 a:hover{background-size:100% 1px}
+ul.plain li.org .lg{transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+ul.plain li.org:hover .lg{transform:translateY(-2px) scale(1.05)}
+.quicklinks a,.masthead a.nl{transition:color .25s ease,border-color .25s ease}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
 </style>
 
 <body>
@@ -147,10 +173,10 @@ img{max-width:100%}
     <p class="para" style="margin-top:16px"><span class="runin">About me:</span> I am a machine learning engineer, primarily interested in biomedical signal processing. My current interests include cardiac electrophysiology, computer vision for single-cell imaging, and applications of large language models in healthcare.</p>
     <p class="para">Over the years I have used machine learning on a broad set of problems across signals, images, speech and language. On the engineering side, I have built production pipelines for a medical device company and research laboratories in France, Japan and Switzerland, and I ship my own tools end to end.</p>
     <ul class="points">
-      <li><b>Cardiac ML:</b> AUROC 0.848 for detecting reduced ejection fraction from 12-lead ECGs, on 4,825 held-out ECGs (Python, scikit-learn, XGBoost, SHAP).</li>
-      <li><b>Computer vision:</b> F1 0.81 at 2,000 cells per second for real-time image-activated cell sorting at the University of Tokyo (PyTorch, OpenCV). Best Poster Award.</li>
-      <li><b>Production signal processing:</b> HD-ECG risk-marker pipeline for IHU Liryc, containerized with Docker on AWS EC2 and S3, with unit tests.</li>
-      <li><b>LLM applications:</b> RAG with a memory layer, a voice agent (Whisper, then an LLM, then text-to-speech), and an LLM-routed finance assistant that passes 289 of 289 checks.</li>
+      <li><b>Signals.</b> Python, NumPy, SciPy, Docker, AWS. I turn raw ECG recordings into measurements a clinician can check, and ship them as tested, containerized pipelines.</li>
+      <li><b>Vision.</b> PyTorch, OpenCV, scikit-image. I train models that read cells from images as they flow past a camera, so a sorter can act on shape instead of brightness alone.</li>
+      <li><b>Language and speech.</b> LangChain, Hugging Face, Whisper, the OpenAI and Claude APIs. I build retrieval, memory and voice interfaces where tested code computes the numbers, not the model.</li>
+      <li><b>Devices.</b> Photolithography, electrospinning, impedance spectroscopy. I also build the sensors that produce the signal in the first place, which is why I know where its noise comes from.</li>
     </ul>
     <p class="quicklinks">
       <a href="#positions">Experience</a>
@@ -199,6 +225,10 @@ img{max-width:100%}
           <img src="images/hd-ecg-repolarization.jpg" alt="Overlaid ECG beats in two colours, red and blue. Thin lines show individual beats and thick lines the ensemble average of each group. The two groups track each other through the P wave and QRS complex but diverge sharply through the T wave, where one is positive and the other inverted. Two vertical markers cross the late T wave.">
           <figcaption>Figure 1. Ensemble-averaged beats from two groups, overlaid. The complexes agree closely through depolarization and separate through repolarization — the T-wave interval is where the prognostic signal sits, and where the measurement markers are placed.</figcaption>
         </figure>
+        <figure>
+          <img src="images/repolarization-dispersion-patients.jpg" alt="Two torso maps of electrode positions shaded by QT value, each beside the overlaid beats of its minimum-QT lead cluster in blue and maximum-QT cluster in red. The left map shows the two clusters nearly superimposed; the right shows them widely separated through the T wave.">
+          <figcaption>Figure 1b. The same measurement on two recordings. Leads are grouped into minimum-QT (blue) and maximum-QT (red) clusters, and the spread between them is read off the body-surface map rather than from a single lead.</figcaption>
+        </figure>
         <p class="meta">Python · NumPy · SciPy · pandas · Matplotlib · Docker · AWS EC2 and S3 · pytest</p>
       </div>
     </article>
@@ -210,9 +240,9 @@ img{max-width:100%}
         <p class="venue">PulsHeart Medical, under IHU Liryc</p>
         <p class="para">Validating cardiac models requires a large and consistently labelled corpus. Manual delineation does not scale, and label inconsistency propagates silently into every result derived from the data.</p>
         <p class="para">I expanded the annotation database in Python, automating signal delineation and beat-origin labelling with SciPy, and designed the digital filtering and statistical feature-extraction routines that reduce noise across multichannel recordings. Noise sources were characterized rather than merely suppressed. Annotation quality was visualized in Matplotlib and documented in reproducible Jupyter reports, so label quality could be audited instead of assumed.</p>
-        <figure class="pending">
-          <div class="slot"><span>Figure slot — ecg-annotation.png<br>automated delineation against manual annotation</span></div>
-          <figcaption>Figure 2. Automated delineation compared with manual annotation on the same beat.</figcaption>
+        <figure>
+          <img src="images/t-wave-end-algorithm.jpg" alt="Six numbered panels tracing an algorithm on an ECG beat: find T-peaks; define peak-based allowed regions; draw tangents along the steepest local slopes; find the intersection with an adaptive ST and TP baseline; refine for slurred morphology; and mark the precise T-wave onset and end.">
+          <figcaption>Figure 2. The delineation routine, step by step. Tangents are taken along the steepest local slopes and intersected with an adaptive baseline, which keeps the T-wave end stable on bifid and slurred beats where a fixed baseline drifts.</figcaption>
         </figure>
         <p class="meta">Python · SciPy · NumPy · Matplotlib · Jupyter</p>
       </div>
@@ -549,9 +579,15 @@ img{max-width:100%}
 <section id="cv">
   <div class="wrap">
     <p class="sechead">Curriculum vitae</p>
+    <div class="cvframe">
+      <object data="cv.pdf#view=FitH" type="application/pdf" aria-label="Curriculum vitae of Anagh Sinha">
+        <p class="cvfallback">Your browser cannot display the PDF here. <a href="cv.pdf">Open the CV (PDF)</a>.</p>
+      </object>
+    </div>
+    <p class="meta" style="margin-bottom:26px"><a href="cv.pdf" download>Download the CV (PDF)</a></p>
     <dl class="facts">
       <dt>Full CV</dt>
-      <dd><a href="cv.pdf">Download (PDF)</a> — updated October 2026</dd>
+      <dd><a href="cv.pdf">Download (PDF)</a> — updated November 2026</dd>
       <dt>Languages and practice</dt>
       <dd>Python, C++, MATLAB, SQL, Bash. Object-oriented design, unit testing, software validation.</dd>
       <dt>Machine learning</dt>
@@ -584,6 +620,24 @@ img{max-width:100%}
 <div class="wrap"><footer><span>Anagh Sinha</span><span>Last updated October 2026</span></footer></div>
 
 <script>
+/* Reveal entries, figures and section heads once as they come into view.
+   Nothing is hidden unless JS runs, so the page stays readable without it. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var targets = document.querySelectorAll('section .sechead, section .subhead, section .groupnote, .entry, ul.plain li, figure, dl.facts, .prose p, .cvframe');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  targets.forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) return; /* already on screen: leave alone */
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+
 document.getElementById('tbtn').addEventListener('click',function(){
   var cur=document.documentElement.getAttribute('data-theme');
   var dark=cur==='dark'||(!cur&&window.matchMedia('(prefers-color-scheme: dark)').matches);
