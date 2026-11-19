@@ -78,6 +78,14 @@ section{padding-block:clamp(34px,4.4vw,52px);border-top:1px solid var(--rule)}
 .runin{font-weight:600}
 .meta{font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);margin-top:14px;line-height:1.6}
 .meta a{font-size:inherit}
+.entry h3 a{color:inherit}
+ul.points{margin:14px 0 0;padding-left:1.15em}
+ul.points li{margin-top:8px;padding-left:.2em}
+ul.points li::marker{color:var(--ink-soft)}
+.vlogo{height:1.25em;width:auto;vertical-align:-.3em;margin-right:7px;background:#fff;border-radius:2px;padding:1px}
+ul.plain li.org{display:grid;grid-template-columns:2.3rem minmax(0,1fr);gap:0 14px;align-items:start}
+li.org .lg{width:2.3rem;height:2.3rem;object-fit:contain;background:#fff;border:1px solid var(--rule);border-radius:3px;padding:3px;margin-top:3px}
+li.org .lg.none{display:block}
 
 .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:0 2.6rem;align-items:start}
 @media (max-width:760px){.intro-grid{grid-template-columns:1fr}}
@@ -133,8 +141,14 @@ img{max-width:100%}
   <div class="intro-grid">
   <div class="col">
     <h1>Anagh Sinha</h1>
-    <p class="affil">M.S. Electrical and Computer Engineering, Boston University<br>Graduate Teaching Assistant, Electronics Design</p>
-    <p class="standfirst">I work on the two ends of the same problem: the bioelectronic devices that record a physiological signal, and the computational methods that turn that signal into something a clinical decision can rest on.</p>
+    <p class="affil">Machine learning and biomedical signal processing engineer<br>M.S. Electrical and Computer Engineering, Boston University · Graduate Teaching Assistant</p>
+    <p class="standfirst">I build machine learning systems for physiological data, including ECG, cell imaging and wearable signals, and take them from raw recordings to tested, deployed software. I also work on the bioelectronic devices that record those signals.</p>
+    <ul class="points">
+      <li><b>Cardiac ML:</b> AUROC 0.848 for detecting reduced ejection fraction from 12-lead ECGs, on 4,825 held-out ECGs (Python, scikit-learn, XGBoost, SHAP).</li>
+      <li><b>Computer vision:</b> F1 0.81 at 2,000 cells per second for real-time image-activated cell sorting at the University of Tokyo (PyTorch, OpenCV). Best Poster Award.</li>
+      <li><b>Production signal processing:</b> HD-ECG risk-marker pipeline for IHU Liryc, containerized with Docker on AWS EC2 and S3, with unit tests.</li>
+      <li><b>LLM applications:</b> RAG with a memory layer, a voice agent (Whisper, then an LLM, then text-to-speech), and an LLM-routed finance assistant that passes 289 of 289 checks.</li>
+    </ul>
     <p class="para" style="margin-top:16px">On the computational side, that has meant high-density ECG analytics for sudden cardiac death risk at IHU Liryc, and machine learning for real-time image-activated cell sorting at the University of Tokyo. On the device side, it has meant metal–insulator–metal biosensors built up from a titanium substrate, and bacteria genetically engineered to display a protein tag that carries therapeutic cargo. The methods differ; the discipline does not. In both, most of the work is understanding the noise well enough to know what the measurement is actually telling you.</p>
     <p class="quicklinks">
       <a href="#research">Research</a>
@@ -159,7 +173,7 @@ img{max-width:100%}
       <p class="entry-when">2026<br>Bordeaux</p>
       <div class="entry-body">
         <h3>Repolarization markers for sudden cardiac death risk stratification</h3>
-        <p class="venue">PulsHeart Medical, under the Institute of Heart Research and Cardiac Modeling (IHU Liryc)</p>
+        <p class="venue"><img class="vlogo" src="images/logos/liryc.png" alt="">PulsHeart Medical, under the Institute of Heart Research and Cardiac Modeling (IHU Liryc)</p>
         <p class="para">Sudden cardiac death risk is difficult to assess from the body surface because the repolarization features that carry the prognostic signal sit close to the noise floor of high-density ECG. Separating the two is the substance of the problem, not a preprocessing step before it.</p>
         <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score — and Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
         <figure>
