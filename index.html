@@ -127,6 +127,7 @@ img{max-width:100%}
 <div class="masthead"><div class="wrap masthead-in">
   <a class="name" href="#top">Anagh Sinha</a>
   <a class="nl" href="#research">Research</a>
+  <a class="nl" href="#projects">Projects</a>
   <a class="nl" href="#positions">Positions</a>
   <a class="nl" href="#publications">Publications</a>
   <a class="nl" href="#teaching">Teaching</a>
@@ -152,6 +153,7 @@ img{max-width:100%}
     <p class="para" style="margin-top:16px">On the computational side, that has meant high-density ECG analytics for sudden cardiac death risk at IHU Liryc, and machine learning for real-time image-activated cell sorting at the University of Tokyo. On the device side, it has meant metal–insulator–metal biosensors built up from a titanium substrate, and bacteria genetically engineered to display a protein tag that carries therapeutic cargo. The methods differ; the discipline does not. In both, most of the work is understanding the noise well enough to know what the measurement is actually telling you.</p>
     <p class="quicklinks">
       <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
       <a href="#cv">Curriculum vitae</a>
       <a href="https://github.com/anagh-sinha">GitHub</a>
       <a href="https://www.linkedin.com/in/anagh-sinha-/">LinkedIn</a>
@@ -203,12 +205,16 @@ img{max-width:100%}
       <p class="entry-when">2024<br>Tokyo</p>
       <div class="entry-body">
         <h3>Machine learning for high-throughput image-activated cell sorting</h3>
-        <p class="venue">Serendipity Lab, Prof. Keisuke Goda, Department of Chemistry, The University of Tokyo · Amgen Scholars Fellowship</p>
+        <p class="venue"><img class="vlogo" src="images/logos/utokyo.svg" alt="">Serendipity Lab, Prof. Keisuke Goda, Department of Chemistry, The University of Tokyo · Amgen Scholars Fellowship</p>
         <p class="para">Fluorescence-activated cell sorting compresses a cell image into an intensity measurement, discarding the morphochemical and spatial structure that frequently carries the information of interest. Image-activated sorting preserves that structure, but the interval between image acquisition and sorting actuation is short enough that practical systems fall back on simple feature gating — which discards the multidimensional data the instrument just acquired.</p>
         <p class="para">Working on <em>Saccharomyces cerevisiae</em> in a 32 mm microfluidic chip, I processed terabytes of VIFFI imaging data through Python pipelines, extracted shape, size and fluorescence-intensity features with OpenCV and scikit-image, and benchmarked feature gating against Random Forest, XGBoost, PyTorch convolutional networks and autoencoder-based unsupervised models, comparing F1 scores and confusion matrices across them. The approach reached an F1 of 0.81 at 2,000 sorting events per second and a flow rate of 1 m/s.</p>
         <figure>
           <img src="images/iacs.jpg" alt="Labelled schematic of the image-activated cell sorting system: hydrodynamic focuser, acoustic focuser, optical microscope, image processor and cell sorter arranged along a microfluidic chip.">
           <figcaption>Figure 2. The image-activated cell sorting system in the Goda Laboratory. Cells are focused hydrodynamically and acoustically, imaged in flow, classified by the image processor, and diverted by the sorter.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/best-poster-award.jpg" alt="Certificate: Best Poster Presentation Award, UTokyo Amgen Scholars Program 2024, presented to Anagh Sinha for Intelligent Image Activated cell sorting with Yeast model.">
+          <figcaption>Figure 0. Best Poster Presentation Award, UTokyo Amgen Scholars Program final presentation, 29 July 2024.</figcaption>
         </figure>
         <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image — <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
       </div>
@@ -247,7 +253,7 @@ img{max-width:100%}
       <p class="entry-when">2024<br>Zürich</p>
       <div class="entry-body">
         <h3>Genetically encoded surface display for Gram-negative bacterial microrobots</h3>
-        <p class="venue">Master's thesis, Medical Microsystems Lab, Prof. Simone Schürle-Finke, Department of Health Sciences and Technology, ETH Zürich · 9.0/10</p>
+        <p class="venue"><img class="vlogo" src="images/logos/eth.png" alt="">Master's thesis, Medical Microsystems Lab, Prof. Simone Schürle-Finke, Department of Health Sciences and Technology, ETH Zürich · 9.0/10</p>
         <p class="para">Chemotactic tumour-homing bacteria, magnetically guided and loaded with cargo, constitute a capable delivery platform. The conventional route to attaching that cargo is harsh chemical functionalization, which damages the cells and is costly at scale.</p>
         <p class="para">I replaced it with a genetically engineered alternative, engineering <em>E. coli</em> BL21(DE3) and <em>B. subtilis</em> 168 to display a HaloTag fusion that forms a covalent bond with cargo conjugated to a chloroalkane-linker ligand. Primers were designed in Benchling; genomic DNA extracted and purified; the construct amplified by PCR and restriction cloning, assembled by Gibson Assembly, introduced by electroporation or heat-shock transformation, then expressed. For magnetic functionalization I activated PEG-coated iron-oxide nanoparticles with chloroalkane-PEG2000-NHS ester, purified by magnetic separation and dialysis, and actuated the resulting microrobots under rotating fields on a Magnebotix MFG-100-i.</p>
         <p class="para"><span class="runin">The obstacle.</span> Nanoparticle loading per microrobot was not reproducible, and it was not evident whether the cause lay in tag expression or in the attachment chemistry. I developed a quantification method to settle the question: time-resolved gating against a 0–500 nM Cy5 calibration series, fitted to determine HaloTag molecules per cell after background subtraction, yielding a working equation and a rapid absorbance and fluorescence measurement that could be applied to every batch before functionalization. Nanoparticles per bacterium were then counted from transmission electron micrographs by particle analysis in ImageJ, with distributions plotted in Origin.</p>
@@ -328,6 +334,130 @@ img{max-width:100%}
   </div>
 </section>
 
+<section id="projects">
+  <div class="wrap">
+    <p class="sechead">Projects</p>
+    <p class="groupnote">Software I have built and shipped. Each links to its source code. Where a repository is private, the code is available on request.</p>
+
+    <article class="entry">
+      <p class="entry-when">2026</p>
+      <div class="entry-body">
+        <h3><a href="https://github.com/anagh-sinha/OpenECG">OpenECG: from a phone photo of an ECG to measurements and a report</a></h3>
+        <p class="venue">Independent project, open source</p>
+        <ul class="points">
+          <li>Built a five-stage pipeline: photo clean-up, digitization into a 12-lead signal, interval measurement (HR, PR, QRS, QT), classification, and a written report.</li>
+          <li>Wrote the digitizer in OpenCV. It calibrates scale from the periodicity of the ECG grid and traces the pen ink column by column.</li>
+          <li>Classified with ECGFounder, a pretrained 150-label 12-lead model in PyTorch. Weights are served from the Hugging Face Hub.</li>
+          <li>Deployed as a Gradio app in Docker. Images are processed in memory and never stored. Tested on synthetic ECGs and validated against PTB-XL.</li>
+        </ul>
+        <p class="meta">Python · PyTorch · OpenCV · NeuroKit2 · SciPy · Hugging Face · Gradio · Docker · pytest — <a href="https://github.com/anagh-sinha/OpenECG">source</a></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2026<br>Boston</p>
+      <div class="entry-body">
+        <h3>Interpretable cardiomyopathy detection from 12-lead ECGs</h3>
+        <p class="venue">Boston University, EC 503 Learning from Data · team of three</p>
+        <ul class="points">
+          <li>Predicted reduced ejection fraction and increased wall thickness from a 10-second ECG, using echo-confirmed labels from EchoNext (about 100,000 ECGs from 36,286 patients).</li>
+          <li>Compared about 40 interpretable clinical ECG markers (logistic regression, gradient-boosted trees, SHAP) against frozen VGG-16 image features and ECG foundation-model embeddings.</li>
+          <li>Pilot result on 4,825 held-out ECGs: AUROC 0.848 and 77% balanced accuracy for reduced ejection fraction.</li>
+        </ul>
+        <p class="meta">Python · scikit-learn · XGBoost · LightGBM · SHAP · PyTorch · WFDB · NeuroKit2 — code on request</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2026<br>Boston</p>
+      <div class="entry-body">
+        <h3><a href="https://github.com/anagh-sinha/finance-automation">AI finance automation for research grants</a></h3>
+        <p class="venue">Boston University, EC 601 Product Design</p>
+        <ul class="points">
+          <li>Built Grant Desk: a researcher asks a question in plain language, and Claude chooses one of five tested reports. Code computes every number, so the model never sees or produces dollar amounts.</li>
+          <li>Verified 289 of 289 checks against an independent pandas implementation. Access control means each researcher sees only their own awards.</li>
+          <li>Built PA15 Automator, a Streamlit tool that turns a budget-versus-actuals file into formatted payroll reports. It passes 13 of 13 tests, including a mock SAP page.</li>
+        </ul>
+        <p class="meta">Python · pandas · Claude API · Streamlit · JavaScript · pytest — runs on synthetic data only — <a href="https://github.com/anagh-sinha/finance-automation">source</a></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2026</p>
+      <div class="entry-body">
+        <h3><a href="https://github.com/anagh-sinha/subvox-win">subvox-win: silent-speech and whisper-to-type on Windows</a></h3>
+        <p class="venue">Independent project, open source</p>
+        <ul class="points">
+          <li>Decodes silently mouthed words from webcam video. MediaPipe FaceMesh tracks lip and chin landmarks, then 1-nearest-neighbour dynamic time warping matches each word against the user's own templates.</li>
+          <li>Measures accuracy honestly, with leave-one-out evaluation and a 500-fold label-permutation test.</li>
+          <li>Adds a whisper-to-type mode that runs Whisper or NVIDIA Parakeet locally on the CPU. Audio is never saved or sent anywhere.</li>
+        </ul>
+        <p class="meta">Python · MediaPipe · OpenCV · SciPy · faster-whisper · ONNX · pytest — <a href="https://github.com/anagh-sinha/subvox-win">source</a></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2026</p>
+      <div class="entry-body">
+        <h3>ApplyPilot: a free job-application autofill extension</h3>
+        <p class="venue">Independent project</p>
+        <ul class="points">
+          <li>Chrome extension (Manifest V3) that parses a CV once, then fills applications on Workday, Greenhouse, Lever, Ashby and custom forms in one click.</li>
+          <li>Parses PDFs with pdf.js and structures the CV with Chrome's built-in on-device AI, so the CV stays on the user's machine.</li>
+          <li>Handles Workday's repeating experience and education blocks and its skill pickers.</li>
+        </ul>
+        <p class="meta">JavaScript · Chrome Extensions API · pdf.js · Chrome built-in AI — code on request</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2025</p>
+      <div class="entry-body">
+        <h3>Voice-first AI sleep coach</h3>
+        <p class="venue">Independent project</p>
+        <ul class="points">
+          <li>Built a voice-to-voice agent: Whisper transcribes the question, an OpenAI GPT model answers using the user's sleep diary and wearable metrics, and pyttsx3 speaks the reply. It falls back to stored answers if the API fails.</li>
+          <li>Built a companion web dashboard in Flask and Socket.IO with real-time chat. Packaged with Docker and gunicorn for deployment on Render.</li>
+        </ul>
+        <p class="meta">Python · OpenAI API · Whisper · Flask · Socket.IO · Docker — <a href="https://github.com/anagh-sinha/Voice-to-Voice-Sleep-Coaching-Agent">voice agent</a> · <a href="https://github.com/anagh-sinha/sleep-ai">web app</a></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2025</p>
+      <div class="entry-body">
+        <h3><a href="https://github.com/anagh-sinha/heart-rate-computation">ECG heart-rate analyzer</a></h3>
+        <p class="venue">Signal processing take-home project</p>
+        <ul class="points">
+          <li>Computed heart rate from EDF recordings with two independent methods, autocorrelation and Pan-Tompkins peak detection, and cross-checked them. On a 300-second recording they agree within 0.7 bpm.</li>
+          <li>Structured as a modular Python package with tests on synthetic signals.</li>
+        </ul>
+        <p class="meta">Python · NumPy · SciPy · pyEDFlib · Matplotlib — <a href="https://github.com/anagh-sinha/heart-rate-computation">source</a></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="entry-when">2025</p>
+      <div class="entry-body">
+        <h3><a href="https://github.com/anagh-sinha/AI-Literature-RAG-Assitant">Question answering over research papers</a></h3>
+        <p class="venue">IBM generative AI coursework</p>
+        <ul class="points">
+          <li>Built a retrieval-augmented QA bot over research papers: PDF loading, text splitting, embeddings, a Chroma vector store and a retriever, with IBM watsonx as the LLM and a Gradio interface.</li>
+        </ul>
+        <p class="meta">Python · LangChain · ChromaDB · SentenceTransformers · IBM watsonx · Gradio — <a href="https://github.com/anagh-sinha/AI-Literature-RAG-Assitant">source</a></p>
+      </div>
+    </article>
+
+    <h2 class="subhead" style="margin-top:40px">Smaller builds and coursework</h2>
+    <ul class="plain">
+      <li><a href="https://github.com/anagh-sinha/Emotion-Detectorwith-Embeddable-Watson-AI-libraries">Emotion detector</a>: a Flask web app on the Watson NLP emotion model, with error handling, unit tests and static code analysis.<span class="sub">Python · Flask · IBM Watson NLP</span></li>
+      <li>King County house prices: exploratory analysis and regression with linear, polynomial and ridge models in scikit-learn pipelines.<span class="sub">Python · pandas · seaborn · scikit-learn</span></li>
+      <li><a href="https://github.com/anagh-sinha/IV-hysteresis-data-analysis">I–V hysteresis</a> and <a href="https://github.com/anagh-sinha/cell-substrate-impedance-spectrometry">impedance spectroscopy</a> analysis tools for the BITS Pilani biosensor lab.<span class="sub">Electrochemical data analysis</span></li>
+      <li><a href="https://github.com/anagh-sinha/Machine-Learning">Machine Learning Specialization</a> (Stanford and DeepLearning.AI): solutions and notes.<span class="sub">Supervised and unsupervised learning</span></li>
+    </ul>
+  </div>
+</section>
+
 <section id="interests">
   <div class="wrap">
     <p class="sechead">Current directions</p>
@@ -344,13 +474,14 @@ img{max-width:100%}
   <div class="wrap">
     <p class="sechead">Positions and education</p>
     <ul class="plain">
-      <li>M.S. Electrical and Computer Engineering, Boston University, 2026–2028. Dean's Scholarship for Excellence. Graduate Teaching Assistant, Electronics Design.<span class="sub">Boston, Massachusetts</span></li>
-      <li>Junior Signal Processing Engineer, PulsHeart Medical, under IHU Liryc, February–August 2026.<span class="sub">Bordeaux, France</span></li>
-      <li>Signal Processing Consultant, PulsHeart Medical, under IHU Liryc, September 2025–February 2026.<span class="sub">Remote</span></li>
-      <li>Master's Project Student, Medical Microsystems Lab, ETH Zürich, August–December 2024.<span class="sub">Zürich, Switzerland</span></li>
-      <li>Research Trainee, Serendipity Lab, The University of Tokyo, June–August 2024. Amgen Scholars Fellowship.<span class="sub">Tokyo, Japan</span></li>
-      <li>Research Student, CREST, BITS Pilani, January 2022–July 2025.<span class="sub">Pilani, India</span></li>
-      <li>B.E. Electronics and Instrumentation Engineering with M.Sc. Biological Sciences, BITS Pilani, 2020–2025.<span class="sub">Dual degree</span></li>
+      <li class="org"><img class="lg" src="images/logos/bu.svg" alt="Boston University"><div>M.S. Electrical and Computer Engineering, Boston University, 2026–2028. Dean's Scholarship for Excellence. Graduate Teaching Assistant, Electronics Design.<span class="sub">Boston, Massachusetts</span></div></li>
+      <li class="org"><img class="lg" src="images/logos/liryc.png" alt="IHU Liryc"><div>Junior Signal Processing Engineer, PulsHeart Medical, under IHU Liryc, February–August 2026.<span class="sub">Bordeaux, France</span></div></li>
+      <li class="org"><img class="lg" src="images/logos/liryc.png" alt="IHU Liryc"><div>Signal Processing Consultant, PulsHeart Medical, under IHU Liryc, September 2025–February 2026.<span class="sub">Remote</span></div></li>
+      <li class="org"><span class="lg none" aria-hidden="true"></span><div>Co-founder and CEO, BioStride Diagnostics, 2025. Portable blood test for traumatic brain injury.<span class="sub"><a href="https://biostridedx.com">biostridedx.com</a></span></div></li>
+      <li class="org"><img class="lg" src="images/logos/eth.png" alt="ETH Zürich"><div>Master's Project Student, Medical Microsystems Lab, ETH Zürich, August–December 2024.<span class="sub">Zürich, Switzerland</span></div></li>
+      <li class="org"><img class="lg" src="images/logos/utokyo.svg" alt="The University of Tokyo"><div>Research Trainee, Serendipity Lab, The University of Tokyo, June–August 2024. Amgen Scholars Fellowship.<span class="sub">Tokyo, Japan</span></div></li>
+      <li class="org"><img class="lg" src="images/logos/bits.png" alt="BITS Pilani"><div>Research Student, CREST, BITS Pilani, January 2022–July 2025.<span class="sub">Pilani, India</span></div></li>
+      <li class="org"><img class="lg" src="images/logos/bits.png" alt="BITS Pilani"><div>B.E. Electronics and Instrumentation Engineering with M.Sc. Biological Sciences, BITS Pilani, 2020–2025.<span class="sub">Dual degree</span></div></li>
     </ul>
   </div>
 </section>
@@ -383,6 +514,10 @@ img{max-width:100%}
     <p class="sechead">Teaching and service</p>
     <div class="prose">
       <p>I am a graduate teaching assistant for Electronics Design in the ECE department at Boston University, and a research mentor and invited panellist for the Biomedical Engineering Society there, guiding student design projects.</p>
+      <figure>
+        <img src="images/bu-research-panel.jpg" alt="Six panellists seated in front of a lecture-hall audience, under projector screens titled Postgraduate Research Panel.">
+        <figcaption>Panellist at the Postgraduate Research Panel, Boston University, November 2026.</figcaption>
+      </figure>
       <p>Each project on this page states what failed before it states what worked, because the failure is usually the part that transfers. Students working on biosensor fabrication, biosignal pipelines or bacterial surface display are welcome to write to me, particularly when something is not reproducing — I wrote replication protocols for the ETH work for that reason.</p>
       <p>Before this I founded Oxon, a municipal waste-management pilot run with local government in a town of over 200,000, tracking collection infrastructure and vehicles. I led a team of ten engineers selected from 150 applicants; the work received PIEDS incubation, an Esri partnership, a grant from the Institute for International Education, and TiE support.</p>
     </div>
