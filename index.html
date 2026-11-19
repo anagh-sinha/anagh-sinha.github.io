@@ -155,7 +155,9 @@ a{text-underline-offset:3px}
 .gallery .shot img{width:100%;display:block;border:1px solid var(--rule);border-radius:10px;transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s ease,border-color .3s ease}
 .gallery .shot:hover img{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.16);border-color:var(--a)}
 .gallery figcaption{border:0;padding:0;margin-top:8px;text-align:center}
-@media (max-width:720px){.gallery .shot{width:10.4rem}}
+.gallery.wide .shot{width:24rem}
+.gallery.wide .shot img{border-radius:6px}
+@media (max-width:720px){.gallery .shot{width:10.4rem}.gallery.wide .shot{width:17rem}}
 
 /* embedded CV */
 .cvframe{max-width:var(--measure);border:1px solid var(--rule);background:var(--rule-faint);margin-bottom:14px}
@@ -544,7 +546,19 @@ img{max-width:100%}
         <ul class="points">
           <li>Built a voice-to-voice agent: Whisper transcribes the question, an OpenAI GPT model answers using the user's sleep diary and wearable metrics, and pyttsx3 speaks the reply. It falls back to stored answers if the API fails.</li>
           <li>Built a companion web dashboard in Flask and Socket.IO with real-time chat. Packaged with Docker and gunicorn for deployment on Render.</li>
+          <li>Specified the wider system: SleepPPG-Net2 for four-class sleep staging from raw photoplethysmography, a small conversational model for coaching, semantic embeddings for retrieval, and on-device inference so intimate sleep data stays on the device.</li>
+          <li>Designed the data fusion to survive real wearables — missing channels, sensor dropouts and misaligned timestamps — because a recommendation engine that needs clean input is useless overnight.</li>
         </ul>
+        <div class="gallery wide" role="group" aria-label="Sleep AI design deck, scrollable">
+          <figure class="shot"><img src="images/sleepai/s01.jpg" alt="Title slide: Elevating Sleep Tech with AI, over a night sky, with a voice assistant listening state." loading="lazy"><figcaption>The pitch</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s02.jpg" alt="Multimodal data integration slide listing physiological metrics such as heart-rate variability, skin temperature and sleep staging, and environmental parameters such as room temperature, humidity and light, beside dashboard mockups." loading="lazy"><figcaption>Inputs</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s03.jpg" alt="Technical implementation slide describing the voice-to-voice assistant and React hypnogram visualizations, beside charts of heart-rate variability and sleep stages." loading="lazy"><figcaption>Implementation</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s04.jpg" alt="Personalized sleep coaching slide covering personalization, holistic improvement, and contextual retrieval with composite matrix algorithms." loading="lazy"><figcaption>Coaching logic</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s05.jpg" alt="Slide on the SleepPPG-Net2 staging engine: four-class staging from photoplethysmography with accelerometer input, trained on six public datasets and 2,574 recordings." loading="lazy"><figcaption>Staging engine</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s06.jpg" alt="AI and ML stack table mapping sleep staging, conversational agent, data storage and retrieval, visualization and edge computing to their components and purposes." loading="lazy"><figcaption>The stack</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s07.jpg" alt="Implementation slide on robust data fusion for missing data and sensor failures, and reinforcement learning to improve recommendations over time." loading="lazy"><figcaption>Robustness</figcaption></figure>
+          <figure class="shot"><img src="images/sleepai/s08.jpg" alt="Vision slide: sleep shouldn't be a battle, covering hardware integration, data analysis and the personalized user experience." loading="lazy"><figcaption>Where it goes</figcaption></figure>
+        </div>
         <p class="meta">Python · OpenAI API · Whisper · Flask · Socket.IO · Docker — <a href="https://github.com/anagh-sinha/Voice-to-Voice-Sleep-Coaching-Agent">voice agent</a> · <a href="https://github.com/anagh-sinha/sleep-ai">web app</a></p>
       </div>
     </article>
