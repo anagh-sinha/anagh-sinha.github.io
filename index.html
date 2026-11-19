@@ -125,6 +125,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 36px;font-family:var(
   --c-blue:#7fb2e8;--c-teal:#5cc5b8;--c-plum:#c79ad0;--c-amber:#e0a955;
   --c-moss:#92c77c;--c-rose:#e58aa2;--c-slate:#9fb3cc;
 }
+:root{--a:var(--c-blue)}
 section{--a:var(--c-blue)}
 #positions{--a:var(--c-slate)}
 #research{--a:var(--c-teal)}
@@ -690,12 +691,16 @@ img{max-width:100%}
     entries.forEach(function(e){
       if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
     });
-  }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  }, {rootMargin:'300px 0px 300px 0px', threshold:0});
+  var watched = [];
   targets.forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) return; /* already on screen: leave alone */
     el.classList.add('reveal');
+    watched.push(el);
     io.observe(el);
   });
+  /* safety net: never leave anything invisible if the observer misses it */
+  setTimeout(function(){ watched.forEach(function(el){ el.classList.add('in'); }); }, 4000);
 })();
 
 document.getElementById('tbtn').addEventListener('click',function(){
