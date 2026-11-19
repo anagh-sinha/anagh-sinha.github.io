@@ -112,6 +112,47 @@ dl.facts dt{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-tr
 dl.facts dt:first-child{margin-top:0}
 dl.facts dd{margin:5px 0 0}
 footer{border-top:1px solid var(--rule);padding-block:28px 36px;font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+/* colour: one accent per section, used on heads, markers, rules and tech lines */
+:root{
+  --c-blue:#1d4e89;--c-teal:#0e6b63;--c-plum:#6a3570;--c-amber:#9a5a0f;
+  --c-moss:#3d6b2e;--c-rose:#9b3350;--c-slate:#3f5068;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --c-blue:#7fb2e8;--c-teal:#5cc5b8;--c-plum:#c79ad0;--c-amber:#e0a955;
+  --c-moss:#92c77c;--c-rose:#e58aa2;--c-slate:#9fb3cc;
+}}
+:root[data-theme="dark"]{
+  --c-blue:#7fb2e8;--c-teal:#5cc5b8;--c-plum:#c79ad0;--c-amber:#e0a955;
+  --c-moss:#92c77c;--c-rose:#e58aa2;--c-slate:#9fb3cc;
+}
+section{--a:var(--c-blue)}
+#positions{--a:var(--c-slate)}
+#research{--a:var(--c-teal)}
+#projects{--a:var(--c-blue)}
+#publications{--a:var(--c-plum)}
+#awards{--a:var(--c-amber)}
+#interests{--a:var(--c-moss)}
+#teaching{--a:var(--c-rose)}
+#writing{--a:var(--c-plum)}
+#cv{--a:var(--c-slate)}
+#contact{--a:var(--c-teal)}
+.sechead{color:var(--a);display:flex;align-items:center;gap:10px}
+.sechead::before{content:"";width:24px;height:3px;background:var(--a);border-radius:2px;flex:none}
+.subhead{border-bottom-color:var(--a)}
+.entry h3 a{color:var(--a)}
+.runin{color:var(--a)}
+ul.points li::marker{color:var(--a)}
+ul.plain li.org .lg{border-color:var(--a)}
+.meta{border-left:2px solid var(--a);padding-left:12px}
+figcaption{border-left:2px solid var(--rule);padding-left:12px}
+figure:hover figcaption{border-left-color:var(--a)}
+.intro .standfirst{font-size:1.2rem}
+.intro h1{background:linear-gradient(95deg,var(--c-blue),var(--c-teal) 58%,var(--c-plum));-webkit-background-clip:text;background-clip:text;color:transparent}
+ul.points li b{color:var(--c-blue)}
+.quicklinks a{border-bottom-color:var(--c-teal)}
+.masthead a.nl:hover{color:var(--c-teal)}
+a{text-underline-offset:3px}
+
 /* embedded CV */
 .cvframe{max-width:var(--measure);border:1px solid var(--rule);background:var(--rule-faint);margin-bottom:14px}
 .cvframe object{display:block;width:100%;height:min(86vh,52rem);border:0}
@@ -222,8 +263,8 @@ img{max-width:100%}
         <p class="para">Sudden cardiac death risk is difficult to assess from the body surface because the repolarization features that carry the prognostic signal sit close to the noise floor of high-density ECG. Separating the two is the substance of the problem, not a preprocessing step before it.</p>
         <p class="para">I established a Python analytics pipeline that first isolates and characterizes HD-ECG noise explicitly, then extracts and benchmarks repolarization metrics using NumPy, SciPy and pandas. The pipeline is containerized with Docker on AWS EC2 and S3, under Git workflows aligned with medical device regulatory practice, with outputs validated through unit testing. The result is a set of specific, interpretable cardiac risk markers rather than an opaque score — and Matplotlib visualizations of metric performance that let clinical and engineering reviewers examine the same evidence.</p>
         <figure>
-          <img src="images/hd-ecg-repolarization.jpg" alt="Overlaid ECG beats in two colours, red and blue. Thin lines show individual beats and thick lines the ensemble average of each group. The two groups track each other through the P wave and QRS complex but diverge sharply through the T wave, where one is positive and the other inverted. Two vertical markers cross the late T wave.">
-          <figcaption>Figure 1. Ensemble-averaged beats from two groups, overlaid. The complexes agree closely through depolarization and separate through repolarization — the T-wave interval is where the prognostic signal sits, and where the measurement markers are placed.</figcaption>
+          <img src="images/t-wave-end-algorithm.jpg" alt="Six numbered panels tracing an algorithm on an ECG beat: find T-peaks; define peak-based allowed regions; draw tangents along the steepest local slopes; find the intersection with an adaptive ST and TP baseline; refine for slurred morphology; and mark the precise T-wave onset and end.">
+          <figcaption>Figure 1. The T-wave-end routine, step by step. Tangents are taken along the steepest local slopes and intersected with an adaptive baseline, which keeps the measurement stable on bifid and slurred beats where a fixed baseline drifts.</figcaption>
         </figure>
         <figure>
           <img src="images/repolarization-dispersion-patients.jpg" alt="Two torso maps of electrode positions shaded by QT value, each beside the overlaid beats of its minimum-QT lead cluster in blue and maximum-QT cluster in red. The left map shows the two clusters nearly superimposed; the right shows them widely separated through the T wave.">
@@ -244,10 +285,6 @@ img{max-width:100%}
         <p class="venue">PulsHeart Medical, under IHU Liryc</p>
         <p class="para">Validating cardiac models requires a large and consistently labelled corpus. Manual delineation does not scale, and label inconsistency propagates silently into every result derived from the data.</p>
         <p class="para">I expanded the annotation database in Python, automating signal delineation and beat-origin labelling with SciPy, and designed the digital filtering and statistical feature-extraction routines that reduce noise across multichannel recordings. Noise sources were characterized rather than merely suppressed. Annotation quality was visualized in Matplotlib and documented in reproducible Jupyter reports, so label quality could be audited instead of assumed.</p>
-        <figure>
-          <img src="images/t-wave-end-algorithm.jpg" alt="Six numbered panels tracing an algorithm on an ECG beat: find T-peaks; define peak-based allowed regions; draw tangents along the steepest local slopes; find the intersection with an adaptive ST and TP baseline; refine for slurred morphology; and mark the precise T-wave onset and end.">
-          <figcaption>Figure 2. The delineation routine, step by step. Tangents are taken along the steepest local slopes and intersected with an adaptive baseline, which keeps the T-wave end stable on bifid and slurred beats where a fixed baseline drifts.</figcaption>
-        </figure>
         <p class="meta">Python · SciPy · NumPy · Matplotlib · Jupyter</p>
       </div>
     </article>
