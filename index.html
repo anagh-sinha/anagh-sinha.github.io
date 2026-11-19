@@ -21,10 +21,6 @@
   --serif:"Spectral",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#13130f;--ink:#e6e3da;--ink-soft:#9c988c;--rule:#33322c;--rule-faint:#24231e;--accent:#9fc0e8;
-  color-scheme:dark;
-}}
 :root[data-theme="dark"]{
   --paper:#13130f;--ink:#e6e3da;--ink-soft:#9c988c;--rule:#33322c;--rule-faint:#24231e;--accent:#9fc0e8;
   color-scheme:dark;
@@ -117,10 +113,6 @@ footer{border-top:1px solid var(--rule);padding-block:28px 36px;font-family:var(
   --c-blue:#1d4e89;--c-teal:#0e6b63;--c-plum:#6a3570;--c-amber:#9a5a0f;
   --c-moss:#3d6b2e;--c-rose:#9b3350;--c-slate:#3f5068;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --c-blue:#7fb2e8;--c-teal:#5cc5b8;--c-plum:#c79ad0;--c-amber:#e0a955;
-  --c-moss:#92c77c;--c-rose:#e58aa2;--c-slate:#9fb3cc;
-}}
 :root[data-theme="dark"]{
   --c-blue:#7fb2e8;--c-teal:#5cc5b8;--c-plum:#c79ad0;--c-amber:#e0a955;
   --c-moss:#92c77c;--c-rose:#e58aa2;--c-slate:#9fb3cc;
@@ -153,6 +145,17 @@ ul.points li b{color:var(--c-blue)}
 .quicklinks a{border-bottom-color:var(--c-teal)}
 .masthead a.nl:hover{color:var(--c-teal)}
 a{text-underline-offset:3px}
+
+/* horizontal gallery of app screens */
+.gallery{display:flex;gap:14px;overflow-x:auto;padding:18px 2px 14px;margin-top:4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.gallery::-webkit-scrollbar{height:8px}
+.gallery::-webkit-scrollbar-thumb{background:var(--rule);border-radius:4px}
+.gallery::-webkit-scrollbar-thumb:hover{background:var(--a)}
+.gallery .shot{flex:0 0 auto;width:12.4rem;margin:0;scroll-snap-align:start}
+.gallery .shot img{width:100%;display:block;border:1px solid var(--rule);border-radius:10px;transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s ease,border-color .3s ease}
+.gallery .shot:hover img{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.16);border-color:var(--a)}
+.gallery figcaption{border:0;padding:0;margin-top:8px;text-align:center}
+@media (max-width:720px){.gallery .shot{width:10.4rem}}
 
 /* embedded CV */
 .cvframe{max-width:var(--measure);border:1px solid var(--rule);background:var(--rule-faint);margin-bottom:14px}
@@ -304,6 +307,10 @@ img{max-width:100%}
         <figure>
           <img src="images/best-poster-award.jpg" alt="Certificate: Best Poster Presentation Award, UTokyo Amgen Scholars Program 2024, presented to Anagh Sinha for Intelligent Image Activated cell sorting with Yeast model.">
           <figcaption>Figure 0. Best Poster Presentation Award, UTokyo Amgen Scholars Program final presentation, 29 July 2024.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/goda-poster.jpg" alt="Conference poster titled Deep Learning and Machine Learning in High Throughput Image-Based Yeast Sorting, laid out in columns: abstract, material, method, results and discussion with classifier comparison charts and confusion matrices, future prospects, conclusion and references.">
+          <figcaption>Figure 0b. The poster as presented. The best single gated feature reached an F1 of 0.73, which is the baseline the learned classifiers had to beat.</figcaption>
         </figure>
         <p class="meta">Python · PyTorch · scikit-learn · XGBoost · OpenCV · scikit-image — <a href="https://sinhalab.wordpress.com/wp-content/uploads/2025/04/goda-lab-deep-learning-final-poster.pdf">poster (PDF)</a>. Best Poster Award, Amgen Scholars Asia Symposium.</p>
       </div>
@@ -567,6 +574,33 @@ img{max-width:100%}
       </div>
     </article>
 
+    <article class="entry">
+      <p class="entry-when">2021–2023<br>Pilani</p>
+      <div class="entry-body">
+        <h3>Oxon: a municipal waste-management app run with local government</h3>
+        <p class="venue">Founder, Oxon Life Pvt Ltd · Esri Startup Program partner · PIEDS incubation</p>
+        <p class="para">A town of more than 200,000 people had no map of its own waste infrastructure, so collection routes were set by habit and a missed bin went unrecorded. We built the map and the reporting loop around it, and ran it with the municipal authority rather than beside it.</p>
+        <ul class="points">
+          <li>Built a sustainable mapping layer over Esri GIS: bins and public toilets as live points, a heat map of reported waste density, and routing to the nearest facility.</li>
+          <li>Added one-touch complaint reporting. A resident photographs a problem, the location is captured automatically, and the complaint goes to the responsible authority with a tracking state.</li>
+          <li>Added hands-free collection-vehicle tracking so the authority could see routes actually driven, not routes assumed.</li>
+          <li>Led a team of ten engineers selected from 150 applicants. The work drew PIEDS incubation, an Esri Startup partnership, a grant from the Institute of International Education, and TiE support.</li>
+        </ul>
+        <div class="gallery" role="group" aria-label="Oxon app screens, scrollable">
+          <figure class="shot"><img src="images/oxon/menu.jpg" alt="App home menu listing Home, Rewards, My Wallet, Sustainable Mapping, Donate and Guide, and Explore and Bid." loading="lazy"><figcaption>Home</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/map.jpg" alt="Sustainable Mapping screen: tabs for Dustbins, Toilets and Suggest Location over a map of Pilani with bin pins and a heat overlay, and buttons to guide the way or open in maps." loading="lazy"><figcaption>Sustainable mapping</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/tracking.jpg" alt="Dark vehicle-tracking screen showing a collection route in progress." loading="lazy"><figcaption>Hands-free tracking</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/complaint.jpg" alt="Complaint form with concerned authority, type of issue, description and location fields." loading="lazy"><figcaption>Raise a complaint</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/scan.jpg" alt="Camera capture screen for photographing the waste problem being reported." loading="lazy"><figcaption>Photograph the issue</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/report.jpg" alt="Filled report screen ready for submission." loading="lazy"><figcaption>Submit</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/location.jpg" alt="Location confirmation screen with the captured position and issue type." loading="lazy"><figcaption>Confirm location</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/profile.jpg" alt="User profile screen showing name, rewards balance and wallet." loading="lazy"><figcaption>Profile and rewards</figcaption></figure>
+          <figure class="shot"><img src="images/oxon/marketplace.jpg" alt="Let's Shop marketplace screen with previous orders, bestsellers and recommended eco-friendly products from local craftsmen." loading="lazy"><figcaption>Marketplace for local craftsmen</figcaption></figure>
+        </div>
+        <p class="meta">Esri GIS · mobile app design · geospatial routing · municipal partnership</p>
+      </div>
+    </article>
+
     <h2 class="subhead" style="margin-top:40px">Smaller builds and coursework</h2>
     <ul class="plain">
       <li><a href="https://github.com/anagh-sinha/Emotion-Detectorwith-Embeddable-Watson-AI-libraries">Emotion detector</a>: a Flask web app on the Watson NLP emotion model, with error handling, unit tests and static code analysis.<span class="sub">Python · Flask · IBM Watson NLP</span></li>
@@ -703,10 +737,15 @@ img{max-width:100%}
   setTimeout(function(){ watched.forEach(function(el){ el.classList.add('in'); }); }, 4000);
 })();
 
+/* Light is the default. The toggle remembers a visitor's choice on their own device. */
+(function(){
+  try{ var sv=localStorage.getItem('theme'); if(sv) document.documentElement.setAttribute('data-theme',sv); }catch(e){}
+})();
 document.getElementById('tbtn').addEventListener('click',function(){
-  var cur=document.documentElement.getAttribute('data-theme');
-  var dark=cur==='dark'||(!cur&&window.matchMedia('(prefers-color-scheme: dark)').matches);
-  document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+  var dark=document.documentElement.getAttribute('data-theme')==='dark';
+  var next=dark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  try{ localStorage.setItem('theme',next); }catch(e){}
 });
 </script>
 
